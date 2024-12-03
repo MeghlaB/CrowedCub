@@ -12,6 +12,7 @@ import MyCompaign from '../Components/MyCompaign';
 import MyDonation from '../Components/MyDonation';
 import Login from '../Components/Login';
 import Register from '../Components/Register';
+import PrivetRoute from '../PrivetRoute/PrivetRoute';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         },
         {
            path:'/addCampaign',
-           element:<AddNewComapaign></AddNewComapaign>
+           element:<PrivetRoute><AddNewComapaign></AddNewComapaign></PrivetRoute>
         },
         {
            path:'/myCampaign',
