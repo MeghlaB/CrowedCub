@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
            path:'/myCampaign',
-           element:<MyCompaign></MyCompaign>
+           element:<PrivetRoute><MyCompaign></MyCompaign></PrivetRoute>
         },
         {
            path:'/myDonation',

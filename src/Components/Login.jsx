@@ -42,12 +42,28 @@ export default function Login() {
           })
         })
      }
+
+     const handleGoogle = ()=>{
+        GoogleLogin()
+        .then((result)=>{
+          setUser(result.user)
+          Swal.fire({
+            title: 'Success!',
+            text: 'Registration successful!',
+            icon: 'Sucess',
+            confirmButtonText: 'Done'
+          })
+        })
+        .catch((err)=>{
+          setUser(err.message)
+        })
+       }
   return (
-    <div>
+    <div className='my-5'>
         <h1 className='text-5xl text-green-900'>Login to your account</h1>
         <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
           <p>
-          <Link  className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /> </Link>
+          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /> </Link>
          </p>
          <div className="divider">or with email and password</div>
         </div>
@@ -98,7 +114,7 @@ export default function Login() {
         
       
       </form> 
-      <p>Don't Have An Account ?<span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
+      <p>Don't Have An Account ?<span><NavLink to={'/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
      
     </div>
     

@@ -79,7 +79,7 @@ export default function Register() {
         })
        }
   return (
-    <div>
+    <div className='my-5'>
         <h1 className='text-5xl text-green-900'>Register to your account</h1>
         <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
         <p>
