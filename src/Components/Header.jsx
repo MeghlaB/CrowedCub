@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { AuthContext } from '../AddProvider/AuthProvider'
 
 export default function Header() {
+  const {name} = useContext(AuthContext)
   return (
     <div className="navbar bg-base-100">
     <div className="navbar-start">

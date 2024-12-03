@@ -10,6 +10,8 @@ import Allcompaign from '../Components/Allcompaign';
 import AddNewComapaign from '../Components/AddNewComapaign';
 import MyCompaign from '../Components/MyCompaign';
 import MyDonation from '../Components/MyDonation';
+import Login from '../Components/Login';
+import Register from '../Components/Register';
 const router = createBrowserRouter([
     {
       path: "/",
@@ -35,6 +37,13 @@ const router = createBrowserRouter([
            path:'/myDonation',
            element:<MyDonation></MyDonation>
         },
+        {
+          path:'/login',
+          element:<Login></Login>
+        },{
+          path:'/register',
+          element:<Register></Register>
+        }
       ]
     },
   ]);
