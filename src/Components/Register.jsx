@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import Swal from 'sweetalert2'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../AddProvider/AuthProvider'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Register() {
+    const { creatUser ,setUser,user,UpdateProfile, GoogleLogin,setLoading}=useContext(AuthContext)
     const [error , setError] = useState('')
     const [showpassword , setShowPassword] = useState(false)
+    const navigate = useNavigate()
     const handeleLRegister = e =>{
         e.preventDefault()
         setError('')
@@ -13,17 +19,75 @@ export default function Register() {
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        if(password.length<6){
+            return setError('Password must be at least 6 character')
+          }
+          if (!/[A-Z]/.test(password)) {
+            return setError("Password must contain at least one uppercase letter.");
+        }
+        if (!/[a-z]/.test(password)) {
+            return setError("Password must contain at least one lowercase letter.");
+        }
+        creatUser (email,password)
+        .then((result)=>{
+          setUser(result.user)
+          e.target.reset()
+        //   toast.success("Registration successful!")
+        Swal.fire({
+            title: 'Success!',
+            text: 'Registration successful!',
+            icon: 'Sucess',
+            confirmButtonText: 'Done'
+          })
+          UpdateProfile({displayName:Name, 
+            photoURL:photo})
+          .then(()=>{
+            setLoading(false)
+            navigate('/')
+
+          })
+          .catch((err)=>{
+            setLoading(false)
+            setUser(err.message)
+          })
+
+        })
+        .catch((err)=>{
+        //   toast.error(`Registration failed! Error:${err.code}`)
+        Swal.fire({
+            title: 'Error!',
+            text: `Registration failed! Error:${err.code}`,
+            icon: 'error',
+            confirmButtonText: 'Done'
+          })
+        })
     }
+
+    const handleGoogle = ()=>{
+        GoogleLogin()
+        .then((result)=>{
+          setUser(result.user)
+          Swal.fire({
+            title: 'Success!',
+            text: 'Registration successful!',
+            icon: 'Sucess',
+            confirmButtonText: 'Done'
+          })
+        })
+        .catch((err)=>{
+          setUser(err.message)
+        })
+       }
   return (
     <div>
         <h1 className='text-5xl text-green-900'>Register to your account</h1>
         <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
         <p>
-          <Link  className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /></Link>
+          <Link onClick={handleGoogle}  className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /></Link>
        </p>
-       <p>
+       
        <div className="divider">or with email and password</div>
-       </p>
+       
         </div>
         <div className="card bg-base-100 w-full mx-auto  max-w-sm shrink-0 shadow-2xl px-3 py-3">
             <form onSubmit={handeleLRegister}  className="card-body">
@@ -74,7 +138,7 @@ export default function Register() {
             </div>
             </form>
             <p>Don't Have An Account ?<span><NavLink to={'/login'} className='text-blue-700 underline'>Login</NavLink></span></p>
-
+            
         </div>
     </div>
   )
