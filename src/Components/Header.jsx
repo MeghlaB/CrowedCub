@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
-
+import logoImage from '../assets/crowed.png'
 export default function Header() {
   const {user,logout} = useContext(AuthContext)
+  // navbar bg-[#814de7] text-white w-full 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-[#814de7] text-white  left-0 right-0 ">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,22 +26,33 @@ export default function Header() {
         <ul
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <NavLink to={'/'}>Home</NavLink>
-          <NavLink to={'/allCampaign'}>All Campaign</NavLink>
-          <NavLink to={'/addCampaign'}>Add New Campaign</NavLink>
-          <NavLink to={'/myCampaign'}>My Campaign</NavLink>
-          <NavLink to={'/myDonation'}>My Donations</NavLink>
+          <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
+  } to={'/'}>Home</NavLink>
+          <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
+  } to={'/allCampaign'}>All Campaign</NavLink>
+          <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
+  } to={'/addCampaign'}>Add New Campaign</NavLink>
+          <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
+  } to={'/myCampaign'}>My Campaign</NavLink>
+          <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
+  } to={'/myDonation'}>My Donations</NavLink>
         </ul>
       </div>
-      <a className="btn btn-ghost text-xl">daisyUI</a>
+      <a className="btn btn-ghost text-[12px] lg:text-xl"><span><img className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full' src={logoImage} alt="" /></span><span className='hidden lg:block'>Crowdfunding</span></a>
+      {/* <a className="btn btn-ghost text-xl"><img src={logoImage} alt="" />Crowdfunding </a> */}
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1 gap-4">
-      <NavLink to={'/'}>Home</NavLink>
-      <NavLink to={'/allCampaign'}>All Campaign</NavLink>
-      <NavLink to={'/addCampaign'}>Add New Campaign</NavLink>
-      <NavLink to={'/myCampaign'}>My Campaign</NavLink>
-      <NavLink to={'/myDonation'}>My Donations</NavLink>
+      <NavLink className={({ isActive}) =>isActive ? " text-slate-900 font-bold border-b-2 border-slate-900   " : ""
+  } to={'/'}>Home</NavLink> 
+      <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : ""
+  } to={'/allCampaign'}>All Campaign</NavLink> 
+      <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900  " : ""
+  } to={'/addCampaign'}>Add New Campaign</NavLink> 
+      <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900  " : ""
+  } to={'/myCampaign'}>My Campaign</NavLink> 
+      <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900  " : ""
+  } to={'/myDonation'}>My Donations</NavLink>
       </ul>
     </div>
     <div className="navbar-end gap-3">
@@ -52,7 +64,7 @@ export default function Header() {
         <button onClick={logout} className="btn">LogOut</button>
       </div>
       : (
-        <div className='flex gap-4'>
+        <div className='flex gap-1 lg:gap-4'>
            <NavLink to={'/login'} className="btn">Login</NavLink>
            <NavLink to={'/register'} className="btn">Register</NavLink>
         </div>
