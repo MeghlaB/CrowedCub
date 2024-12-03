@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../AddProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 export default function AddCampaign() {
   const { user } = useContext(AuthContext);
@@ -18,7 +19,37 @@ export default function AddCampaign() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+   const from = e.target
+   const thumbnail = from.thumbnail.value;
+   const title = from.title.value;
+   const type = from.type.value;
+   const description = from.description.value;
+   const minDonation = from.minDonation.value;
+   const deadline = from.deadline.value;
+   const addInfo ={thumbnail,title,type,description,minDonation,deadline}
+   console.log(addInfo)
+  //  send data with server site
+
+  fetch(`http://localhost:5000/addCompaign`,{
+    method:'POST',
+    headers:{
+      'content-type':'application/json'
+    },
+    body:JSON.stringify(addInfo)
+  })
+  .then((res)=> res.json())
+  .then((data)=>{
+    if(data.insertedId){
+      Swal.fire({
+        title: 'Success!',
+        text: 'Add Comapign SuccesFully!',
+        icon: 'success',
+        confirmButtonText: 'Done'
+      })
+    }
+    console.log(data)
+  })
+
   };
 
   return (
