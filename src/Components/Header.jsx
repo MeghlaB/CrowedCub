@@ -1,13 +1,19 @@
 import React, { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
+
 import logoImage from '../assets/crowed.png'
+
+import { MdSunny } from 'react-icons/md'
+import { FiMoon } from 'react-icons/fi'
+import { ThemeContext } from '../AddProvider/ThemeProvider'
+
 export default function Header() {
-  const {user,logout,isDarkmode , setDarkmode } = useContext(AuthContext)
-  const handletooglebtn=()=>{
-    setDarkmode(!isDarkmode)
-   
-  }
+  const {togglebtn,theme} = useContext(ThemeContext)
+  const {user,logout,isDarkmode , setDarkmode} = useContext(AuthContext)
+
+  // const apidata = useContext(AuthContext)
+ 
   return (
    <div className="navbar   bg-[#814de7] text-white" >
       <div className="navbar-start">
@@ -59,12 +65,14 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-      {/* <button
-          onClick={handletooglebtn}
-          className="px-4 py-2 bg-blue-500 dark:bg-yellow-400 text-white dark:text-black font-bold rounded"
+      <button
+          onClick={togglebtn}
+          className={`px-4 py-2 text-sm font-bold transition duration-300 rounded-md shadow ${
+            theme === "light" ? "text-black hover:bg-gray-200" : "text-white hover:bg-gray-800"
+          }`}
         >
-          {isDarkmode ? 'Light Mode' : 'Dark Mode'}
-        </button> */}
+          {theme === "light"?<MdSunny />:<FiMoon />}
+      </button>
 
       {
         user?.email?
