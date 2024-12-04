@@ -16,7 +16,6 @@ export default function DetailsPage() {
       }  = detailsData
       
     const handleDonate = ()=>{
-        console.log('donate',donateData)
         const donateData ={
             email:user?.email,
             username:user?.displayName,
