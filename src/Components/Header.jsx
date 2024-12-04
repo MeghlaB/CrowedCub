@@ -7,7 +7,7 @@ export default function Header() {
   // navbar bg-[#814de7] text-white w-full 
   return (
   
-  <div className="navbar    bg-[#814de7] text-white ">
+   <div className="navbar   bg-[#814de7] text-white" >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,6 +77,7 @@ export default function Header() {
       
       </div>
     </div>
+
     
    
   )

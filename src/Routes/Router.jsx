@@ -13,6 +13,7 @@ import MyDonation from '../Components/MyDonation';
 import Login from '../Components/Login';
 import Register from '../Components/Register';
 import PrivetRoute from '../PrivetRoute/PrivetRoute';
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
         },
         {
            path:'/myCampaign',
-           element:<PrivetRoute><MyCompaign></MyCompaign></PrivetRoute>
+           element:<PrivetRoute><MyCompaign></MyCompaign></PrivetRoute>,
+           loader:()=>fetch('http://localhost:5000/addCompaign')
         },
         {
            path:'/myDonation',
@@ -45,7 +47,12 @@ const router = createBrowserRouter([
         },{
           path:'/register',
           element:<Register></Register>
-        }
+        },
+        // {
+        //   path:'/details/:id',
+        //   loader:({params})=> fetch(`'http://localhost:5000/addCompaign/${params.id}`),
+        //   element:<PrivetRoute><DetailsPage></DetailsPage></PrivetRoute>
+        // }
       ]
     },
   ]);

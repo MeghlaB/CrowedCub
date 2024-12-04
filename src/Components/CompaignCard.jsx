@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function CompaignCard({loader}) {
     const {thumbnail,
@@ -6,7 +7,8 @@ export default function CompaignCard({loader}) {
         type,
         description,
         minDonation,
-        deadline}  = loader
+        deadline,
+      }  = loader
   return (
     
     <div className="card bg-base-100 w-96 shadow-xl">
@@ -24,6 +26,9 @@ export default function CompaignCard({loader}) {
     <div className="card-actions justify-end">
       <div className="badge badge-outline">{deadline}</div>
       <div className="badge badge-outline">{minDonation}</div>
+    </div>
+    <div>
+      <Link to={'/details'} className='btn  btn-secondary'>Details</Link>
     </div>
   </div>
 </div>

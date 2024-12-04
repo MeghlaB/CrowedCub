@@ -30,13 +30,27 @@ export default function Register() {
         }
         creatUser (email,password)
         .then((result)=>{
+          const newUser={Name,email}
           setUser(result.user)
+          console.log(result.user)
           e.target.reset()
-        //   toast.success("Registration successful!")
+          fetch('http://localhost:5000/user',{
+            method:'POST',
+            headers:{
+              'content-type':'application/json'
+            },
+            body:JSON.stringify(newUser)
+          })
+          .then((res)=> res.json())
+          .then((data)=>{
+            console.log(data)
+          })
+         
+        })
         Swal.fire({
             title: 'Success!',
             text: 'Registration successful!',
-            icon: 'Sucess',
+            icon: 'sucess',
             confirmButtonText: 'Done'
           })
           UpdateProfile({displayName:Name, 
@@ -50,8 +64,6 @@ export default function Register() {
             setLoading(false)
             setUser(err.message)
           })
-
-        })
         .catch((err)=>{
         //   toast.error(`Registration failed! Error:${err.code}`)
         Swal.fire({

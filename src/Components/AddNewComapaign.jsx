@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 export default function AddCampaign() {
   const { user } = useContext(AuthContext);
+  console.log(user.email)
   const [formData, setFormData] = useState({
     thumbnail: "",
     title: "",
@@ -11,6 +12,7 @@ export default function AddCampaign() {
     description: "",
     minDonation: "",
     deadline: "",
+    addedby:user?.email
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +21,7 @@ export default function AddCampaign() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('all data',formData)
    const from = e.target
    const thumbnail = from.thumbnail.value;
    const title = from.title.value;
@@ -26,7 +29,7 @@ export default function AddCampaign() {
    const description = from.description.value;
    const minDonation = from.minDonation.value;
    const deadline = from.deadline.value;
-   const addInfo ={thumbnail,title,type,description,minDonation,deadline}
+   const addInfo ={thumbnail,title,type,description,minDonation,deadline,addedby:user?.email}
    console.log(addInfo)
   //  send data with server site
 
