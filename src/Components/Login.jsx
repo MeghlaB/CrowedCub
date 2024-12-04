@@ -50,9 +50,14 @@ export default function Login() {
           Swal.fire({
             title: 'Success!',
             text: 'Registration successful!',
-            icon: 'Sucess',
+            icon: 'success',
             confirmButtonText: 'Done'
           })
+          if(result.user){
+            setTimeout(()=>{
+              navigate(location?.state? location.state :'/')
+            },1000)
+          }
         })
         .catch((err)=>{
           setUser(err.message)

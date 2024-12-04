@@ -1,6 +1,6 @@
 import { comma } from 'postcss/lib/list'
 import React, { useEffect, useState } from 'react'
-import { data } from 'react-router-dom'
+import { data, Link } from 'react-router-dom'
 
 export default function RunnigComapign() {
     const [campaigns,setCamapaign] = useState([])
@@ -11,7 +11,6 @@ export default function RunnigComapign() {
             const today = new Date()
             const runningCampiangs = data.filter((campaign)=>new Date(campaign.deadline)>today)
             setCamapaign(runningCampiangs.slice(0,6))
-
         })
 
     },[])
@@ -38,14 +37,20 @@ export default function RunnigComapign() {
                     <p className="font-bold mt-2">Minimum Donation: {campaign.minDonation} BDT</p>
                     <p className="text-sm text-gray-500">Deadline: {new Date(campaign.deadline).toLocaleDateString()}</p>
                     <div className="card-actions justify-end mt-4">
+                    <div>
+                        <Link to={`/details/${campaign._id}`} className='btn  btn-secondary'>See More</Link>
+                    </div>
                     </div>
                     </div>
                     </div>
                       )
                     }
+               
+                    
         </div>
         )
         }
+       
       
     </div>
   )
