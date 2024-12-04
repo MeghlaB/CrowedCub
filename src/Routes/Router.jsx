@@ -42,7 +42,8 @@ const router = createBrowserRouter([
         },
         {
            path:'/myDonation',
-           element:<MyDonation></MyDonation>
+           element:<PrivetRoute><MyDonation></MyDonation></PrivetRoute>,
+           loader:()=>fetch('http://localhost:5000/user')
         },
         {
           path:'/login',

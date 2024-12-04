@@ -21,7 +21,8 @@ export default function DetailsPage() {
             username:user?.displayName,
             title,
             description,
-            minDonation
+            minDonation,
+            thumbnail
         }
         fetch('http://localhost:5000/user',{
             method:'POST',
