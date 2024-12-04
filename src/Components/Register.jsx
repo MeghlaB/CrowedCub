@@ -62,9 +62,7 @@ export default function Register() {
             setUser(err.message)
           })
         })
-        
         .catch((err)=>{
-        //   toast.error(`Registration failed! Error:${err.code}`)
         Swal.fire({
             title: 'Error!',
             text: `Registration failed! Error:${err.code}`,
@@ -77,6 +75,7 @@ export default function Register() {
     const handleGoogle = ()=>{
         GoogleLogin()
         .then((result)=>{
+          console.log(result.user)
           setUser(result.user)
           Swal.fire({
             title: 'Success!',
