@@ -1,10 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
 import logoImage from '../assets/crowed.png'
 export default function Header() {
-  const {user,logout} = useContext(AuthContext)
+  const {user,logout,isDarkmode , setDarkmode } = useContext(AuthContext)
   // navbar bg-[#814de7] text-white w-full 
+  const handletooglebtn=()=>{
+    setDarkmode(!isDarkmode)
+   
+  }
   return (
   
    <div className="navbar   bg-[#814de7] text-white" >
@@ -57,6 +61,13 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end gap-3">
+      <button
+          onClick={handletooglebtn}
+          className="px-4 py-2 bg-blue-500 dark:bg-yellow-400 text-white dark:text-black font-bold rounded"
+        >
+          {isDarkmode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+
       {
         user?.email?
         <div className='flex items-center gap-2'>
@@ -65,7 +76,9 @@ export default function Header() {
           className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full ' src={user?.photoURL} alt="" />
           {/* <p className='text-xs lg:text-[14px]'>{user?.displayName}</p> */}
           <button onClick={logout} className="btn">LogOut</button>
+          
         </div>
+        
         : (
           <div className='flex gap-1 lg:gap-4'>
             <NavLink to={'/login'} className="btn">Login</NavLink>

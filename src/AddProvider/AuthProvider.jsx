@@ -8,6 +8,17 @@ import { signInWithEmailAndPassword } from 'firebase/auth/cordova'
 export const AuthContext = createContext(null)
 const Provider = new GoogleAuthProvider();
 export default function AuthProvider({children}) {
+  const[isDarkmode , setDarkmode]= useState(false)
+  useEffect(()=>{
+    if(isDarkmode){
+      document.body.classList.add('dark')
+    }
+    else{
+      document.body.classList.remove('dark')
+    }
+
+  },[isDarkmode])
+
     const[user , setUser] = useState(null) 
     const [loading, setLoading] = useState(true)
 
@@ -51,7 +62,9 @@ export default function AuthProvider({children}) {
     creatUser,
     loginuser,
     UpdateProfile,
-    GoogleLogin
+    GoogleLogin,
+    isDarkmode , 
+    setDarkmode
 
    }
   return (
