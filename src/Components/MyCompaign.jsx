@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 export default function MyCampaign() {
   const{user}= useContext(AuthContext)
   const campaignData = useLoaderData();
-const userCampaigns = campaignData.filter((data) => data.addedby === user?.email)
+const userCampaigns = campaignData.filter((data) => data.email === user?.email)
 const [comapign , setComapaign ] = useState(userCampaigns)
 // console.log(userCampaigns)
 const handleDelete = _id =>{

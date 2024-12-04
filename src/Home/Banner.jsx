@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import  banner1 from '../assets/iamge2.jpg'
-import banner2 from '../assets/image3.jpg'
-import banner3 from '../assets/image4.jpg'
+import banner1 from '../assets/banner1.jpg'
+import banner2 from '../assets/banner2.jpg'
+import banner3 from '../assets/banner3.jpg'
+import banner4 from '../assets/banner4.jpg'
 import AOS from 'aos';
 // Swiper CSS
 import "swiper/css";
@@ -30,7 +31,7 @@ export default function Banner() {
           <img
             className="w-full h-[520px] object-cover"
             src={banner1}
-            alt="Winter Campaign 1"
+            alt=" Campaign 1"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
           <h2 className="text-2xl font-bold text-center mb-4">Raise Funds for Medical Expenses</h2>
@@ -49,7 +50,7 @@ export default function Banner() {
           <img
             className="w-full h-[520px] object-cover"
             src={banner2}
-            alt="Winter Campaign 2"
+            alt="Campaign 2"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
           <h2 className="text-2xl font-bold text-center mb-4">Support Creative Projects</h2>
@@ -73,7 +74,6 @@ export default function Banner() {
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
           <h2 className="text-2xl font-bold text-center mb-4">Support Business Initiatives</h2>
         <p className="text-center">Help raise funds to launch new products or services.</p>
-
             <button
               className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg hover:bg-red-600 transition-all duration-300"
               data-aos="fade-up"

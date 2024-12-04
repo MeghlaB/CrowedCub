@@ -3,7 +3,7 @@ import Banner from '../Home/Banner'
 
 export default function Home() {
   return (
-    <div className='w-full pt-5'>
+    <div className='w-full'>
       <Banner></Banner>
     </div>
   )

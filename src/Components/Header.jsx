@@ -28,7 +28,7 @@ export default function Header() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            className="menu menu-sm dropdown-content  bg-blue-950 rounded-box z-[4] mt-3 w-52 p-2  shadow">
             <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
     } to={'/'}>Home</NavLink>
             <NavLink className={({ isActive}) =>isActive ? "text-slate-900 font-bold border-b-2 border-slate-900 " : "text-red-700"
@@ -59,12 +59,12 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-      <button
+      {/* <button
           onClick={handletooglebtn}
           className="px-4 py-2 bg-blue-500 dark:bg-yellow-400 text-white dark:text-black font-bold rounded"
         >
           {isDarkmode ? 'Light Mode' : 'Dark Mode'}
-        </button>
+        </button> */}
 
       {
         user?.email?
