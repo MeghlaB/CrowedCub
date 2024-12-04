@@ -32,7 +32,6 @@ export default function Register() {
         .then((result)=>{
           const newUser={Name,email}
           setUser(result.user)
-          console.log(result.user)
           e.target.reset()
           // fetch('http://localhost:5000/user',{
           //   method:'POST',
@@ -45,9 +44,7 @@ export default function Register() {
           // .then((data)=>{
           //   console.log(data)
           // })
-         
-        })
-        Swal.fire({
+          Swal.fire({
             title: 'Success!',
             text: 'Registration successful!',
             icon: 'sucess',
@@ -64,6 +61,8 @@ export default function Register() {
             setLoading(false)
             setUser(err.message)
           })
+        })
+        
         .catch((err)=>{
         //   toast.error(`Registration failed! Error:${err.code}`)
         Swal.fire({
@@ -146,7 +145,6 @@ export default function Register() {
             </div>
             <div className="form-control mt-6">
                 <button className="btn btn-primary mb-3">Register</button>
-            
             </div>
             </form>
             <p>Don't Have An Account ?<span><NavLink to={'/login'} className='text-blue-700 underline'>Login</NavLink></span></p>

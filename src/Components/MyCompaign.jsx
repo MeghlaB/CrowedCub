@@ -6,8 +6,6 @@ import Swal from 'sweetalert2';
 export default function MyCampaign() {
   const{user}= useContext(AuthContext)
   const campaignData = useLoaderData();
-  
-// console.log(campaignData)
 const userCampaigns = campaignData.filter((data) => data.addedby === user?.email)
 const [comapign , setComapaign ] = useState(userCampaigns)
 // console.log(userCampaigns)
@@ -15,7 +13,7 @@ const handleDelete = _id =>{
   console.log(_id)
   Swal.fire({
     title: "Are you sure?",
-    text: "You won't be able to revert this!",
+    text: "Campaign card is Deleted!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -23,7 +21,6 @@ const handleDelete = _id =>{
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-    
       fetch(`http://localhost:5000/addCompaign/${_id}`,{
         method:"DELETE"
       })
@@ -42,8 +39,6 @@ const handleDelete = _id =>{
     }
   });
 }
-
-
   return (
     <div className="container mx-auto my-5">
       <div className="overflow-x-auto">

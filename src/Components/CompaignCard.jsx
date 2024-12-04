@@ -8,6 +8,7 @@ export default function CompaignCard({loader}) {
         description,
         minDonation,
         deadline,
+        _id
       }  = loader
   return (
     
@@ -20,7 +21,7 @@ export default function CompaignCard({loader}) {
   <div className="card-body">
     <h2 className="card-title">
     {title.split(" ").slice(0, 2).join(" ")}
-      <div className="badge badge-secondary">{minDonation}</div>
+      <div className="badge badge-secondary">{type}</div>
     </h2>
     <p className='text-left text-slate-900 font-bold'> {description.split(" ").slice(0, 6).join(" ")}</p>
     <div className="card-actions justify-end">
@@ -28,7 +29,7 @@ export default function CompaignCard({loader}) {
       <div className="badge badge-outline">{minDonation}</div>
     </div>
     <div>
-      <Link to={'/details'} className='btn  btn-secondary'>Details</Link>
+      <Link to={`/details/${_id}`} className='btn  btn-secondary'>See More</Link>
     </div>
   </div>
 </div>

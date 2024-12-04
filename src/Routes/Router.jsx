@@ -14,6 +14,8 @@ import Login from '../Components/Login';
 import Register from '../Components/Register';
 import PrivetRoute from '../PrivetRoute/PrivetRoute';
 import Update from '../Components/Update';
+import DetailsPage from '../Pages/DetailsPage';
+import Donate from '../Components/Donate';
 
 const router = createBrowserRouter([
     {
@@ -53,12 +55,16 @@ const router = createBrowserRouter([
           path:'/update/:id',
           element:<Update></Update>,
           loader:({params})=>fetch(`http://localhost:5000/addCompaign/${params.id}`)
+        },
+        {
+          path:'/details/:id',
+          element:<PrivetRoute><DetailsPage></DetailsPage></PrivetRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/addCompaign/${params.id}`)
+        },
+        {
+          path:'/donate',
+          element:<Donate></Donate>
         }
-        // {
-        //   path:'/details/:id',
-        //   loader:({params})=> fetch(`'http://localhost:5000/addCompaign/${params.id}`),
-        //   element:<PrivetRoute><DetailsPage></DetailsPage></PrivetRoute>
-        // }
       ]
     },
   ]);

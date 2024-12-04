@@ -4,7 +4,9 @@ import Swal from "sweetalert2";
 
 export default function AddCampaign() {
   const { user } = useContext(AuthContext);
+  console.log(user?.displayName)
   console.log(user.email)
+  console.log(user)
   const [formData, setFormData] = useState({
     thumbnail: "",
     title: "",
@@ -12,7 +14,8 @@ export default function AddCampaign() {
     description: "",
     minDonation: "",
     deadline: "",
-    addedby:user?.email
+    email:user?.email,
+    name:user?.displayName
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,10 +32,9 @@ export default function AddCampaign() {
    const description = from.description.value;
    const minDonation = from.minDonation.value;
    const deadline = from.deadline.value;
-   const addInfo ={thumbnail,title,type,description,minDonation,deadline,addedby:user?.email}
+   const addInfo ={thumbnail,title,type,description,minDonation,deadline,email:user?.email,name:user?.displayName}
    console.log(addInfo)
   //  send data with server site
-
   fetch(`http://localhost:5000/addCompaign`,{
     method:'POST',
     headers:{
@@ -52,9 +54,7 @@ export default function AddCampaign() {
     }
     console.log(data)
   })
-
   };
-
   return (
     <div className="container mx-auto py-10 px-4">
       <h2 className="text-3xl font-bold text-center mb-8">Add New Campaign</h2>

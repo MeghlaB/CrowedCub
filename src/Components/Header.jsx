@@ -4,13 +4,11 @@ import { AuthContext } from '../AddProvider/AuthProvider'
 import logoImage from '../assets/crowed.png'
 export default function Header() {
   const {user,logout,isDarkmode , setDarkmode } = useContext(AuthContext)
-  // navbar bg-[#814de7] text-white w-full 
   const handletooglebtn=()=>{
     setDarkmode(!isDarkmode)
    
   }
   return (
-  
    <div className="navbar   bg-[#814de7] text-white" >
       <div className="navbar-start">
         <div className="dropdown">
