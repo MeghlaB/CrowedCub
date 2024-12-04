@@ -16,11 +16,13 @@ import PrivetRoute from '../PrivetRoute/PrivetRoute';
 import Update from '../Components/Update';
 import DetailsPage from '../Pages/DetailsPage';
 import Donate from '../Components/Donate';
+import ErrorPage from '../Pages/ErrorPage';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:"/",

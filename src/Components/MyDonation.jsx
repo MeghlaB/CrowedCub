@@ -12,7 +12,7 @@ export default function MyDonation() {
       {
         userCampaigns.length === 0 ? (
           
-          <p className="text-center flex justify-center items-center  text-2xl font-bold text-violet-700 text-gray-500  bg-base-200 h-80 my-7 mx-7">No donations found!</p>
+          <p className="text-center flex justify-center items-center  text-2xl font-bold text-violet-700  bg-base-200 h-80 my-7 mx-7">No donations found!</p>
         ) 
         :(
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-4">
