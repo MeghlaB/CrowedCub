@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider';
 
 export default function MyCampaign() {
@@ -30,7 +30,7 @@ console.log(userCampaigns)
                 <td>{data.deadline}</td>
                 <td>{data.minDonation}</td>
                 <td>
-                  <button className="btn btn-primary">Update</button>
+                  <Link to={`/update/${data._id}`} className="btn btn-primary">Update</Link>
                 </td>
                 <td>
                   <button className="btn btn-danger">Delete</button>

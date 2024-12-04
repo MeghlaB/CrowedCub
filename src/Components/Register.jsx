@@ -34,17 +34,17 @@ export default function Register() {
           setUser(result.user)
           console.log(result.user)
           e.target.reset()
-          fetch('http://localhost:5000/user',{
-            method:'POST',
-            headers:{
-              'content-type':'application/json'
-            },
-            body:JSON.stringify(newUser)
-          })
-          .then((res)=> res.json())
-          .then((data)=>{
-            console.log(data)
-          })
+          // fetch('http://localhost:5000/user',{
+          //   method:'POST',
+          //   headers:{
+          //     'content-type':'application/json'
+          //   },
+          //   body:JSON.stringify(newUser)
+          // })
+          // .then((res)=> res.json())
+          // .then((data)=>{
+          //   console.log(data)
+          // })
          
         })
         Swal.fire({
