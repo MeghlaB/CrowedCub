@@ -1,8 +1,27 @@
-# React + Vite
+#1.Assignment Category: Tulip🌷
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#2.Live-Link=> https://assignment-10tulip.web.app/
 
-Currently, two official plugins are available:
+#3.Description => CrowedCub is a crowdfunding platform empowering communities by enabling seamless fundraising and donation opportunities for impactful campaigns. It bridges the gap between donors and recipients for personal needs, creative ideas, startups, and more, fostering meaningful connections and inspiring change..
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#4. key features of my project =>
+
+⁕ Dynamic Campaign Management
+
+⁕ Private Routes for Personalized Experience
+
+⁕ Seamless Authentication
+
+⁕ Error-Free Navigation
+
+⁕ Interactive UI
+
+#5. Technology used =>
+
+⁕ React.js
+
+⁕ Tailwind CSS
+
+⁕ React Router
+
+⁕ SweetAlert
