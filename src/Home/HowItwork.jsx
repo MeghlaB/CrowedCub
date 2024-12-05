@@ -26,13 +26,13 @@ export default function HowItWork() {
   />
       </h2>
       <div className="text-center space-x-6 mb-10">
-        {/* Toggle Buttons */}
+  
         <button
           onClick={() => setActiveTab("donors")}
           className={`px-6 py-2 font-bold border-b-4 transition ${
             activeTab === "donors"
-              ? "text-orange-600 border-orange-600"
-              : "text-gray-500 hover:text-orange-600 hover:border-orange-600"
+              ? " border-[#796B96] text-purple-600"
+              : " hover:text-purple-800 hover:border-purple-800"
           }`}
         >
           For Donors
@@ -54,7 +54,7 @@ export default function HowItWork() {
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-orange-100 rounded-full">
               <img src={img1} alt="Choose a Cause" />
             </div>
-            <h3 className="font-bold text-lg text-orange-600 mb-2">CHOOSE A CAUSE</h3>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">CHOOSE A CAUSE</h3>
             <p className="text-gray-700">Browse different campaigns and select a cause.</p>
           </div>
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
@@ -68,14 +68,14 @@ export default function HowItWork() {
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-green-100 rounded-full">
               <img src={img4} alt="Order Processing" />
             </div>
-            <h3 className="font-bold text-lg text-green-600 mb-2">ORDER PROCESSING</h3>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">ORDER PROCESSING</h3>
             <p className="text-gray-700">Checkout and pay for your contributions.</p>
           </div>
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-red-100 rounded-full">
               <img src={img2} alt="Final Feedback" />
             </div>
-            <h3 className="font-bold text-lg text-red-600 mb-2">FINAL FEEDBACK</h3>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">FINAL FEEDBACK</h3>
             <p className="text-gray-700">Provide your valuable feedback.</p>
           </div>
         </div>
@@ -86,28 +86,28 @@ export default function HowItWork() {
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-orange-100 rounded-full">
               <img src={img3} alt="Fill Form Icon" />
             </div>
-            <h3 className="font-bold text-lg text-orange-600 mb-2">FILL THE FORM</h3>
-            <p className="text-gray-700">Fill <a href="#" className="text-orange-600 font-bold">Start A Campaign</a> form and send us your requirement.</p>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">FILL THE FORM</h3>
+            <p className="text-gray-700">Fill <a href="#" className="text-purple-600 font-bold">Start A Campaign</a> form and send us your requirement.</p>
           </div>
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-green-100 rounded-full">
               <img src={img6} alt="Campaign Is Live" />
             </div>
-            <h3 className="font-bold text-lg text-green-600 mb-2">CAMPAIGN IS LIVE</h3>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">CAMPAIGN IS LIVE</h3>
             <p className="text-gray-700">Your campaign goes live with all the details.</p>
           </div>
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-blue-100 rounded-full">
               <img src={imge8} alt="Campaign Updates Icon" />
             </div>
-            <h3 className="font-bold text-lg text-blue-600 mb-2">CAMPAIGN UPDATES</h3>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">CAMPAIGN UPDATES</h3>
             <p className="text-gray-700">Donors will get updates about the distribution.</p>
           </div>
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-red-100 rounded-full">
               <img src={img5} alt="NGO Feedback" />
             </div>
-            <h3 className="font-bold text-lg text-red-600 mb-2">NGO FEEDBACK</h3>
+            <h3 className="font-bold text-lg text-purple-600 mb-2">NGO FEEDBACK</h3>
             <p className="text-gray-700">Provide feedback about the campaign process.</p>
           </div>
         </div>

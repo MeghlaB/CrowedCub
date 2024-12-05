@@ -57,12 +57,12 @@ const router = createBrowserRouter([
         {
           path:'/update/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/${params.id}`)
+          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
         },
         {
           path:'/details/:id',
           element:<PrivetRoute><DetailsPage></DetailsPage></PrivetRoute>,
-          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/${params.id}`)
+          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
         },
         {
           path:'/donate',

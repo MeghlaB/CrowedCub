@@ -62,12 +62,12 @@ const handleDelete = _id =>{
           <td>{data.deadline}</td>
           <td>{data.minDonation}</td>
           <td>
-            <Link to={`/update/${data._id}`} className="btn btn-primary">Update</Link>
+            <Link to={`/update/${data._id}`} className="btn  bg-[#796B96] text-white">Update</Link>
           </td>
           <td>
             <Link 
             onClick={()=> handleDelete(data._id)}
-             className="btn btn-error">Delete</Link>
+             className="btn bg-red-400 text-white">Delete</Link>
           </td>
         </tr>
       ))}

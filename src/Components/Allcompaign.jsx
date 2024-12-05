@@ -31,7 +31,7 @@ export default function Allcompaign() {
               <td>{data.deadline}</td>
               <td>{data.minDonation}</td>
               <td>
-                <Link to={`/details/${data._id}`} className="btn btn-primary">See More</Link>
+                <Link to={`/details/${data._id}`} className="btn bg-[#796B96] text-white">See More</Link>
               </td>
             
             </tr>

@@ -48,7 +48,6 @@ export default function Header() {
           </ul>
         </div>
         <a className="btn btn-ghost text-[12px] lg:text-xl"><span><img className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full' src={logoImage} alt="" /></span><span className='hidden lg:block'>Crowdcube</span></a>
-        {/* <a className="btn btn-ghost text-xl"><img src={logoImage} alt="" />Crowdfunding </a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4">
@@ -76,15 +75,22 @@ export default function Header() {
 
       {
         user?.email?
-        <div className='flex items-center gap-2'>
-          <img 
-          title={`Name: ${user?.displayName || 'N/A'}\nEmail: ${user?.email || 'N/A'}`}
-          className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full ' src={user?.photoURL} alt="" />
-          {/* <p className='text-xs lg:text-[14px]'>{user?.displayName}</p> */}
-          <button onClick={logout} className="btn">LogOut</button>
-          
-        </div>
-        
+        <div className="relative group">
+            <img
+              src={user?.photoURL}
+              className="rounded-full w-10 h-10 cursor-pointer"
+              alt="User"
+            />
+            <div className="absolute top-12 -left-[7rem] flex flex-col items-center gap-2 w-40   bg-[#1D232A] p-3 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <h3 className="text-sm font-semibold">{user?.displayName}</h3>
+              <button
+                onClick={logout}
+                className="px-3 py-1  btn bg-[#796B96] text-white  rounded-md text-sm"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         : (
           <div className='flex gap-1 lg:gap-4'>
             <NavLink to={'/login'} className="btn">Login</NavLink>

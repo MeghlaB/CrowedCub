@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider';
 import Swal from 'sweetalert2';
-
 export default function Update() {
     const updateData = useLoaderData()
+    console.log(updateData)
     const { user } = useContext(AuthContext);
     const {
         thumbnail,
@@ -24,15 +24,13 @@ export default function Update() {
     deadline: deadline || "",
     addedby:user?.email
   });
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    // console.log('all data',formData)
+    console.log('all data',formData)
    const from = e.target
    const thumbnail = from.thumbnail.value;
    const title = from.title.value;
@@ -41,7 +39,7 @@ export default function Update() {
    const minDonation = from.minDonation.value;
    const deadline = from.deadline.value;
    const updateComapign ={thumbnail,title,type,description,minDonation,deadline,addedby:user?.email}
-  //  console.log(updateComapign)
+   console.log(updateComapign)
   //  send data with server site
   fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`,{
     method:'PUT',
@@ -60,12 +58,9 @@ export default function Update() {
         confirmButtonText: 'Done'
       })
     }
-    // console.log(data)
+    console.log(data)
   })
-
   };
-
-
   return (
     <div className="container mx-auto py-10 px-4">
     <h2 className="text-3xl font-bold text-center mb-8">Updated Campaign</h2>
@@ -155,7 +150,6 @@ export default function Update() {
           className="w-full px-3 py-2 border rounded bg-gray-100"
         />
       </div>
-
       <div className="mb-4">
         <label className="text-left flex justify-start text-gray-700 font-bold mb-2">User Name</label>
         <input
@@ -165,13 +159,12 @@ export default function Update() {
           className="w-full px-3 py-2 border rounded bg-gray-100"
         />
       </div>
-
       <div className="text-center">
         <button
           type="submit"
           className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
         >
-          Update
+          Add
         </button>
       </div>
     </form>

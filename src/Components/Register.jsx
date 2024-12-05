@@ -94,7 +94,7 @@ export default function Register() {
        
         </div>
         <div className="card bg-base-100 w-full mx-auto  max-w-sm shrink-0 shadow-2xl px-3 py-3">
-            <form   className="card-body">
+            <form onSubmit={handeleLRegister}  className="card-body">
                 <div className="form-control">
                 <label className="label">
                 <span className="label-text">Name</span>
@@ -137,7 +137,7 @@ export default function Register() {
                 </label>
             </div>
             <div className="form-control mt-6">
-                <button onClick={handeleLRegister} className="btn btn-primary mb-3">Register</button>
+                <button className="btn btn-primary mb-3">Register</button>
             </div>
             </form>
             <p>Don't Have An Account ?<span><NavLink to={'/login'} className='text-blue-700 underline'>Login</NavLink></span></p>

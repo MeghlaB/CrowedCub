@@ -49,7 +49,7 @@ export default function RunnigComapign() {
                     <p className="text-sm text-gray-500">Deadline: {new Date(campaign.deadline).toLocaleDateString()}</p>
                     <div className="card-actions justify-end mt-4">
                     <div>
-                        <Link to={`/details/${campaign._id}`} className='btn  btn-secondary'>See More</Link>
+                        <Link to={`/details/${campaign._id}`} className='btn bg-[#796B96] text-white'>See More</Link>
                     </div>
                     </div>
                     </div>
