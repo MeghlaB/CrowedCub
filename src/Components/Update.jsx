@@ -32,7 +32,7 @@ export default function Update() {
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    console.log('all data',formData)
+    // console.log('all data',formData)
    const from = e.target
    const thumbnail = from.thumbnail.value;
    const title = from.title.value;
@@ -41,9 +41,9 @@ export default function Update() {
    const minDonation = from.minDonation.value;
    const deadline = from.deadline.value;
    const updateComapign ={thumbnail,title,type,description,minDonation,deadline,addedby:user?.email}
-   console.log(updateComapign)
+  //  console.log(updateComapign)
   //  send data with server site
-  fetch(`http://localhost:5000/addCompaign/${_id}`,{
+  fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`,{
     method:'PUT',
     headers:{
       'content-type':'application/json'
@@ -60,7 +60,7 @@ export default function Update() {
         confirmButtonText: 'Done'
       })
     }
-    console.log(data)
+    // console.log(data)
   })
 
   };

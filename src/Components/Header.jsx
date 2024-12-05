@@ -47,7 +47,7 @@ export default function Header() {
     } to={'/myDonation'}>My Donations</NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost text-[12px] lg:text-xl"><span><img className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full' src={logoImage} alt="" /></span><span className='hidden lg:block'>Crowdfunding</span></a>
+        <a className="btn btn-ghost text-[12px] lg:text-xl"><span><img className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full' src={logoImage} alt="" /></span><span className='hidden lg:block'>Crowdcube</span></a>
         {/* <a className="btn btn-ghost text-xl"><img src={logoImage} alt="" />Crowdfunding </a> */}
       </div>
       <div className="navbar-center hidden lg:flex">

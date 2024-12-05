@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter'
 export default function RunnigComapign() {
     const [campaigns,setCamapaign] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/addCompaign')
+        fetch('https://server-site-topaz.vercel.app/addCompaign')
         .then(res=>res.json())
         .then((data)=>{
             const today = new Date()

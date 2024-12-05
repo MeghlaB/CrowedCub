@@ -18,9 +18,9 @@ export default function DetailsPage() {
       }  = detailsData
     const isDeadlineOver = new Date(deadline) < new Date();
     const handleDonate = ()=>{
-      console.log('Is Deadline Over:', isDeadlineOver);
+      // console.log('Is Deadline Over:', isDeadlineOver);
       if(isDeadlineOver){
-        console.log('Expired campaign triggered'); 
+        // console.log('Expired campaign triggered'); 
         Swal.fire({
           title: 'Expired!',
           text: 'This campaign has expired. You cannot donate!',
@@ -38,7 +38,7 @@ export default function DetailsPage() {
           minDonation,
           thumbnail
       }
-      fetch('http://localhost:5000/user',{
+      fetch('https://server-site-topaz.vercel.app/user',{
           method:'POST',
           headers:{
             'content-type':'application/json'
@@ -55,7 +55,7 @@ export default function DetailsPage() {
                 confirmButtonText: 'Done'
               })
             }
-            console.log(data)
+            // console.log(data)
       })   
       }
     }

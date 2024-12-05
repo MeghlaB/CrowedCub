@@ -15,7 +15,7 @@ export default function CompaignCard({campaign,onClick}) {
         _id
       }  = comapign
 const handleDelete = _id =>{
-  console.log(_id)
+  // console.log(_id)
   Swal.fire({
     title: "Are you sure?",
     text: "Campaign card is Deleted!",
@@ -26,7 +26,7 @@ const handleDelete = _id =>{
     confirmButtonText: "Yes, delete it!"
    }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/addCompaign/${_id}`,{
+          fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`,{
            method:"DELETE"
           })
           .then((res)=>res.json())

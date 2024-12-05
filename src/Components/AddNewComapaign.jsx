@@ -25,7 +25,7 @@ export default function AddCampaign() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('all data',formData)
+    // console.log('all data',formData)
    const from = e.target
    const thumbnail = from.thumbnail.value;
    const title = from.title.value;
@@ -36,7 +36,7 @@ export default function AddCampaign() {
    const addInfo ={thumbnail,title,type,description,minDonation,deadline,email:user?.email,name:user?.displayName}
   //  console.log(addInfo)
   //  send data with server site
-  fetch(`http://localhost:5000/addCompaign`,{
+  fetch(`https://server-site-topaz.vercel.app/addCompaign`,{
     method:'POST',
     headers:{
       'content-type':'application/json'
@@ -53,7 +53,7 @@ export default function AddCampaign() {
         confirmButtonText: 'Done'
       })
     }
-    console.log(data)
+    // console.log(data)
   })
   };
   return (
