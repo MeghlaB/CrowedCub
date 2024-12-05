@@ -26,7 +26,7 @@ export default function Allcompaign() {
           {sortData.map((data, index) => (
             <tr key={data._id}> 
               <th>{index + 1}</th>
-              <td>{data.title}</td>
+              <td>{data.title.slice(0,30)}</td>
               <td>{data.description.slice(0,50)}</td>
               <td>{data.deadline}</td>
               <td>{data.minDonation}</td>
