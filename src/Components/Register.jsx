@@ -84,15 +84,7 @@ export default function Register() {
        }
   return (
     <div className='my-5'>
-        <h1 className='text-5xl text-green-900'>Register to your account</h1>
-        <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
-        <p>
-          <Link onClick={handleGoogle}  className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /></Link>
-       </p>
-       
-       <div className="divider">or with email and password</div>
-       
-        </div>
+        <h1 className='text-5xl text-purple-600'>Register to your account</h1>
         <div className="card bg-base-100 w-full mx-auto  max-w-sm shrink-0 shadow-2xl px-3 py-3">
             <form onSubmit={handeleLRegister}  className="card-body">
                 <div className="form-control">

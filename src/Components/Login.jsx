@@ -42,7 +42,6 @@ export default function Login() {
           })
         })
      }
-
      const handleGoogle = ()=>{
         GoogleLogin()
         .then((result)=>{
@@ -64,14 +63,8 @@ export default function Login() {
         })
        }
   return (
-    <div className='my-5'>
-        <h1 className='text-5xl text-green-900'>Login to your account</h1>
-        <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
-          <p>
-          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /> </Link>
-         </p>
-         <div className="divider">or with email and password</div>
-        </div>
+    <div className='my-5 mx-3'>
+        <h1 className='text-5xl text-purple-500'>Login to your account</h1>
      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl px-4 py-3">
       <form onSubmit={handeleLogin}  className="card-body ">
         <div className="form-control">
@@ -122,7 +115,15 @@ export default function Login() {
       <p>Don't Have An Account ?<span><NavLink to={'/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
      
     </div>
-    
+    <div className="flex justify-center">
+  <div className="divider w-2/5 lg:w-1/5">or</div>
+</div>
+    <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
+          <p>
+          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /> </Link>
+         </p>
+      
+     </div>
    </div>
   )
 }
