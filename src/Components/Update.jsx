@@ -4,7 +4,6 @@ import { AuthContext } from '../AddProvider/AuthProvider';
 import Swal from 'sweetalert2';
 export default function Update() {
     const updateData = useLoaderData()
-    console.log(updateData)
     const { user } = useContext(AuthContext);
     const {
         thumbnail,
@@ -30,7 +29,6 @@ export default function Update() {
   };
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    console.log('all data',formData)
    const from = e.target
    const thumbnail = from.thumbnail.value;
    const title = from.title.value;
@@ -39,7 +37,7 @@ export default function Update() {
    const minDonation = from.minDonation.value;
    const deadline = from.deadline.value;
    const updateComapign ={thumbnail,title,type,description,minDonation,deadline,addedby:user?.email}
-   console.log(updateComapign)
+   
   //  send data with server site
   fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`,{
     method:'PUT',
@@ -58,7 +56,7 @@ export default function Update() {
         confirmButtonText: 'Done'
       })
     }
-    console.log(data)
+ 
   })
   };
   return (
