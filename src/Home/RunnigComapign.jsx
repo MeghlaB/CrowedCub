@@ -1,6 +1,7 @@
 import { comma } from 'postcss/lib/list'
 import React, { useEffect, useState } from 'react'
 import { data, Link } from 'react-router-dom'
+import { Typewriter } from 'react-simple-typewriter'
 
 export default function RunnigComapign() {
     const [campaigns,setCamapaign] = useState([])
@@ -16,7 +17,17 @@ export default function RunnigComapign() {
     },[])
   return (
     <div className='container mx-auto py-10 px-4'>
-        <h1 className="text-3xl font-bold text-center mb-8">Running Campaigns</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">
+        <Typewriter
+            words={['Running Campaigns']}
+            loop={Infinity}
+            cursor
+            cursorStyle='_'
+            typeSpeed={50}
+            deleteSpeed={50}
+            delaySpeed={1000}
+        />
+        </h1>
         {
         campaigns.length === 0 ?(
                 <p className='className="text-center text-gray-500"'>No running Campaigns</p>

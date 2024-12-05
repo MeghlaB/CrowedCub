@@ -15,7 +15,7 @@ export default function Header() {
   // const apidata = useContext(AuthContext)
  
   return (
-   <div className="navbar   bg-[#814de7] text-white" >
+   <div className="navbar   bg-[#796b96] text-white" >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

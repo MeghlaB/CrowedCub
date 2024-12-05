@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
+import { BsCalendar2Date } from "react-icons/bs";
+import { MdOutlineAttachMoney } from "react-icons/md";
 import Swal from 'sweetalert2'
 
 export default function DetailsPage() {
@@ -56,18 +58,24 @@ export default function DetailsPage() {
             console.log(data)
       })   
       }
-        
     }
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl px-4 py-4 my-10 mx-10">
     <figure>
       <img
+      className='h-[350px] w-[950px]'
         src={thumbnail}
         alt="Album" />
     </figure>
     <div className="card-body">
       <h2 className="card-title">{title}</h2>
       <p>{description}</p>
+      <p>Type: <button className=' badge  badge-info py-2  '>{type}</button></p>
+      <p className='flex items-center gap-4'> <BsCalendar2Date /> {deadline}</p>
+      <p className='flex items-center '><MdOutlineAttachMoney className='font-bold text-xl' />
+      <span className='text-xl '>{minDonation}</span> 
+
+      <span className='font-bold text-xl space-x-3'> BDT </span></p>
       <div className="card-actions justify-end">
       <Link
   onClick={!isDeadlineOver ? handleDonate : null}

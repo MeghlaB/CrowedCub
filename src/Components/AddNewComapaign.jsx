@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../AddProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function AddCampaign() {
   const { user } = useContext(AuthContext);
@@ -57,7 +58,18 @@ export default function AddCampaign() {
   };
   return (
     <div className="container mx-auto py-10 px-4">
-      <h2 className="text-3xl font-bold text-center mb-8">Add New Campaign</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">
+      <Typewriter
+        words={['Add New Campaign']}
+        loop={0} 
+        cursor
+        cursorStyle="|" 
+        typeSpeed={80} 
+        deleteSpeed={100} 
+        className="text-red-500" 
+      />
+
+      </h2>
       <form
         onSubmit={handleSubmit}
         className="max-w-2xl mx-auto bg-white p-6 rounded shadow-md"
