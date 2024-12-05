@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import CompaignCard from './CompaignCard'
 
 export default function Allcompaign() {
@@ -10,12 +10,35 @@ export default function Allcompaign() {
     setSortdata(sorted)
   }, [loaderData]) 
   return (
-    <div className='py-5'>
-     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-0 lg:px-10'>
-     {
-        sortData.map((loader)=><CompaignCard key={loader._id} loader={loader}></CompaignCard>)
-      }
-     </div>
+    <div className="container mx-auto my-5">
+    <div className="overflow-x-auto">
+      <table className="table ">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>MinDonation</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortData.map((data, index) => (
+            <tr key={data._id}> 
+              <th>{index + 1}</th>
+              <td>{data.title}</td>
+              <td>{data.description.slice(0,50)}</td>
+              <td>{data.deadline}</td>
+              <td>{data.minDonation}</td>
+              <td>
+                <Link to={`/details/${data._id}`} className="btn btn-primary">See More</Link>
+              </td>
+            
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div>
   )
 }

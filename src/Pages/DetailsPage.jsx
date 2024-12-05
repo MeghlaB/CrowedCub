@@ -63,7 +63,7 @@ export default function DetailsPage() {
     <div className="card lg:card-side bg-base-100 shadow-xl px-4 py-4 my-10 mx-10">
     <figure>
       <img
-      className='h-[350px] w-[950px]'
+     
         src={thumbnail}
         alt="Album" />
     </figure>

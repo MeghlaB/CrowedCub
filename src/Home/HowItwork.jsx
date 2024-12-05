@@ -14,7 +14,7 @@ export default function HowItWork() {
   const [activeTab, setActiveTab] = useState("donors");
   return (
     <section className="py-12">
-      <h2 className="text-center text-3xl font-bold text-gray-800 mb-10">
+      <h2 className="text-3xl font-bold text-center mb-8">
       <Typewriter
     words={['How It Works?']}
     loop={0}
