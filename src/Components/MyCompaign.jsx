@@ -29,7 +29,7 @@ const handleDelete = _id =>{
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/addCompaign/${_id}`,{
+      fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`,{
         method:"DELETE"
       })
       .then((res)=>res.json())

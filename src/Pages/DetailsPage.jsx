@@ -1,3 +1,4 @@
+
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AddProvider/AuthProvider';
@@ -19,7 +20,7 @@ export default function DetailsPage() {
         icon: 'error',
         confirmButtonText: 'Close',
       });
-      return; 
+      return;
     }
     const donateData = {
       email: user?.email,
@@ -51,32 +52,32 @@ export default function DetailsPage() {
   };
 
   return (
-    <div className="flex card lg:card-side bg-base-100 shadow-xl px-4 py-4 my-10 mx-10">
-  <div className="flex-[1] p-4">
-    <img className="w-full h-auto" src={thumbnail} alt="Campaign" />
-  </div>
-  <div className="flex-[2] p-4">
-    <h2 className="card-title">{title}</h2>
-    <p>{description}</p>
-    <p>Type: <button className="badge badge-info my-2">{type}</button></p>
-    <p className="flex items-center gap-4">
-      <BsCalendar2Date /> {deadline}
-    </p>
-    <p className="flex items-center">
-      <MdOutlineAttachMoney className="font-bold text-xl" />
-      <span className="text-xl">{minDonation}</span>
-      <span className="font-bold text-xl space-x-3">BDT</span>
-    </p>
-    <div className="card-actions justify-end">
-      <button
-     
-        onClick={handleDonate}
-        className=" btn bg-[#796B96] text-white"
-      >
-        Donate NOW
-      </button>
+    <div className="flex flex-col bg-base-100 shadow-xl p-6 my-10 mx-auto max-w-4xl space-y-6">
+      <div className="w-full">
+        <img className="w-full rounded-lg" src={thumbnail} alt="Campaign" />
+      </div>
+      <div>
+        <h2 className="text-3xl font-bold mb-4">{title}</h2>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <p>
+          Type: <span className="badge badge-info">{type}</span>
+        </p>
+        <p className="flex items-center gap-2 my-2 text-gray-500">
+          <BsCalendar2Date /> {deadline}
+        </p>
+        <p className="flex items-center gap-2 text-xl">
+          <MdOutlineAttachMoney className="text-2xl text-green-500" />
+          {minDonation} BDT
+        </p>
+      </div>
+      <div className="flex justify-end">
+        <button
+          onClick={handleDonate}
+          className="btn bg-[#796B96] text-white hover:bg-[#5c4b77]"
+        >
+          Donate NOW
+        </button>
+      </div>
     </div>
-  </div>
-</div>
   );
 }
