@@ -67,7 +67,7 @@ export default function Header() {
       <button
           onClick={togglebtn}
           className={`px-4 py-2 text-sm font-bold transition duration-300 rounded-md shadow ${
-            theme === "light" ? "text-black hover:bg-gray-200" : "text-white hover:bg-gray-800"
+            theme === "light" ? "text-black hover:bg-gray-200" : "text-black font-bold hover:bg-gray-800 hover:text-white"
           }`}
         >
           {theme === "light"?<MdSunny />:<FiMoon />}
@@ -81,7 +81,7 @@ export default function Header() {
               className="rounded-full w-10 h-10 cursor-pointer"
               alt="User"
             />
-            <div className="absolute top-12 -left-[7rem] flex flex-col items-center gap-2 w-40   bg-[#1D232A] p-3 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+            <div className="absolute top-12 -left-[7rem] flex flex-col items-center gap-2 w-40   bg-[#1D232A] p-3 shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-5">
               <h3 className="text-sm font-semibold">{user?.displayName}</h3>
               <button
                 onClick={logout}
