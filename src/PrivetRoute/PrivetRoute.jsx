@@ -7,9 +7,10 @@ export default function PrivetRoute({children}) {
     const location = useLocation()
     // (location)
     if(loading){
-        return <div className='text-center mt-4'>
-            <span className="loading loading-bars loading-lg "></span>
-        </div>
+      return <div className="flex justify-center items-center h-40">
+            <div className="spinner border-4 border-purple-600 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
+          </div>
+        
     }
     if(user && user?.email){
         return children

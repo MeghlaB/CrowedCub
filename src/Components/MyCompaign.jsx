@@ -1,17 +1,24 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import CompaignCard from './CompaignCard';
 
 export default function MyCampaign() {
-  const{user}= useContext(AuthContext)
+  const{user, setLoading,loading}= useContext(AuthContext)
   const campaignData = useLoaderData();
-const userCampaigns = campaignData.filter((data) => data.email === user?.email)
-const [comapign , setComapaign ] = useState(userCampaigns)
+  const [comapign , setComapaign ] = useState([])
+  useEffect(()=>{
+    setLoading(true)
+    const userCampaigns = campaignData.filter((data) => data.email === user?.email)
+    setComapaign(userCampaigns)
+    setLoading(false)
+  },[])
+
+
 // console.log(userCampaigns)
 const handleDelete = _id =>{
-  console.log(_id)
+  // console.log(_id)
   Swal.fire({
     title: "Are you sure?",
     text: "Campaign card is Deleted!",
@@ -30,7 +37,7 @@ const handleDelete = _id =>{
         if(data.deletedCount >0){
           Swal.fire({
             title: "Deleted!",
-            text: "Your file has been deleted.",
+            text: "Campaign has deleted.",
             icon: "success"
           });
           const remaining = comapign.filter ((data)=> data._id !== _id)
@@ -77,4 +84,3 @@ const handleDelete = _id =>{
 </div> 
   );
 }
-{/* */}
