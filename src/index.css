@@ -1,4 +1,5 @@
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,3 +28,4 @@
       border-color: transparent;
     }
   }
+  

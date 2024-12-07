@@ -12,8 +12,6 @@ import { Typewriter } from 'react-simple-typewriter'
 
 
 export default function Feauterd() {
-
-  
     useEffect(() => {
         AOS.init({
           duration: 1000,
@@ -41,14 +39,14 @@ export default function Feauterd() {
   </div>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
     <div className=" bg-white   p-6 rounded-lg shadow hover:shadow-lg transition"
-    data-aos="zoom-out-up"
+
     >
       <img src={img1} alt="Avail Tax Benefits" className="w-12 h-12 mx-auto mb-4"/>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Avail Tax Benefits</h3>
       <p className="text-gray-600 text-sm">Get an 80G certificate with every donation & save on tax.</p>
     </div>
     <div className="  bg-white  p-6 rounded-lg shadow hover:shadow-lg transition"
-     data-aos="zoom-out-up"
+
    
     >
       <img src={img2} alt="Trustworthy & Secure" className="w-12 h-12 mx-auto mb-4"/>
@@ -56,15 +54,13 @@ export default function Feauterd() {
       <p className="text-gray-600 text-sm">Payment process and donors’ data is completely secure and encrypted.</p>
     </div>
     <div className="  bg-white  p-6 rounded-lg shadow hover:shadow-lg transition"
-     data-aos="zoom-out-up"
-  
+     data-aos="zoom-out-up"  
     >
       <img src={img3} alt="Regular Updates" className="w-12 h-12 mx-auto mb-4"/>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Regular Updates</h3>
       <p className="text-gray-600 text-sm">Get regular updates about the impact you’ve created.</p>
     </div>
     <div className=" bg-white  p-6 rounded-lg shadow hover:shadow-lg transition"
-     data-aos="zoom-out-up"
    
     >
       <img src={img4} alt="Donate Hassle-free" className="w-12 h-12 mx-auto mb-4"/>
@@ -80,7 +76,7 @@ export default function Feauterd() {
       <p className="text-gray-600 text-sm">Rigorous and stringent due-diligence procedures.</p>
     </div>
     <div className=" bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
-     data-aos="zoom-out-up"
+
      
     >
       <img src={img6} alt="Greater Impact" className="w-12 h-12 mx-auto mb-4"/>
