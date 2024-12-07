@@ -6,7 +6,6 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
 export default function Register() {
     const { creatUser ,setUser,user,UpdateProfile, GoogleLogin,setLoading}=useContext(AuthContext)
     const [error , setError] = useState('')
@@ -64,7 +63,6 @@ export default function Register() {
     const handleGoogle = ()=>{
         GoogleLogin()
         .then((result)=>{
-          // console.log(result.user)
           setUser(result.user)
           Swal.fire({
             title: 'Success!',

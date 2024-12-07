@@ -15,7 +15,6 @@ export default function Login() {
       setError('')
         const email = e.target.email.value;
         const password = e.target.password.value;
-        // console.log(email,password)
         loginuser(email,password)
         .then((result)=>{
           setUser(result.user)

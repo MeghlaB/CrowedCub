@@ -17,6 +17,7 @@ import Update from '../Components/Update';
 import DetailsPage from '../Pages/DetailsPage';
 import Donate from '../Components/Donate';
 import ErrorPage from '../Pages/ErrorPage';
+import ScrollToTopOnMount from '../Components/ScrollComponent';
 
 const router = createBrowserRouter([
     {
@@ -61,7 +62,10 @@ const router = createBrowserRouter([
         },
         {
           path:'/details/:id',
-          element:<PrivetRoute><DetailsPage></DetailsPage></PrivetRoute>,
+          element:<PrivetRoute>
+            <ScrollToTopOnMount></ScrollToTopOnMount>
+            <DetailsPage></DetailsPage>
+            </PrivetRoute>,
           loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
         },
         {

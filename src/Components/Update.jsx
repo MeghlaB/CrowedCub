@@ -160,7 +160,7 @@ export default function Update() {
       <div className="text-center">
         <button
           type="submit"
-          className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+          className="bg-purple-600 w-full text-white px-6 py-2 rounded hover:bg-blue-600"
         >
          Update
         </button>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
 
-import logoImage from '../assets/crowed.png'
+import logoImage from '../assets/donate.png'
 
 import { MdSunny } from 'react-icons/md'
 import { FiMoon } from 'react-icons/fi'
@@ -72,7 +72,6 @@ export default function Header() {
         >
           {theme === "light"?<MdSunny />:<FiMoon />}
       </button>
-
       {
         user?.email?
         <div className="relative group">

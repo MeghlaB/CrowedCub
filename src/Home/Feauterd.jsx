@@ -5,8 +5,8 @@ import img3 from '../assets/updare.png'
 import img4 from '../assets/donate.png'
 import img5 from '../assets/verified.png'
 import img6 from '../assets/impcat.png'
-import 'aos/dist/aos.css'; // AOS CSS
-import AOS from 'aos'; // AOS JS
+import 'aos/dist/aos.css'; 
+import AOS from 'aos';
 import { Typewriter } from 'react-simple-typewriter'
 export default function Feauterd() {
     useEffect(() => {

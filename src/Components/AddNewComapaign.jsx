@@ -5,9 +5,6 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function AddCampaign() {
   const { user } = useContext(AuthContext);
-  // console.log(user?.displayName)
-  // console.log(user.email)
-  // console.log(user)
   const [formData, setFormData] = useState({
     thumbnail: "",
     title: "",
@@ -69,7 +66,7 @@ export default function AddCampaign() {
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="max-w-2xl mx-auto bg-white p-6 rounded shadow-md"
+        className="max-w-2xl mx-auto bg-base-200 p-6 rounded shadow-md"
       >
         <div className="mb-4">
           <label className=" text-left flex justify-start text-gray-700 font-bold mb-2 ">Image URL</label>
@@ -104,10 +101,10 @@ export default function AddCampaign() {
             required
             className="w-full px-3 py-2 border rounded"
           >
-            <option value="personal issue">Personal Issue</option>
-            <option value="startup">Startup</option>
-            <option value="business">Business</option>
-            <option value="creative ideas">Creative Ideas</option>
+            <option value="Personal issue">Personal Issue</option>
+            <option value="Startup">Startup</option>
+            <option value="Business">Business</option>
+            <option value="Creative ideas">Creative Ideas</option>
           </select>
         </div>
         <div className="mb-4">
@@ -167,7 +164,7 @@ export default function AddCampaign() {
         <div className="text-center">
           <button
             type="submit"
-            className="btn bg-purple-700  text-white px-6 py-2 rounded hover:bg-[#796B96] t"
+            className="btn bg-purple-700 w-full text-white px-6 py-2 rounded hover:bg-[#796B96] t"
           >
             Add
           </button>

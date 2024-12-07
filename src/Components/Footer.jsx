@@ -47,7 +47,6 @@ export default function Footer() {
   return (
     <footer className="bg-base-200 text-base-content py-10">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Services Section */}
         <nav>
           <h6 className="footer-title text-lg font-semibold">Services</h6>
           <a className="link link-hover block mt-2">Branding</a>
@@ -55,8 +54,6 @@ export default function Footer() {
           <a className="link link-hover block">Marketing</a>
           <a className="link link-hover block">Advertisement</a>
         </nav>
-
-        {/* Company Section */}
         <nav>
           <h6 className="footer-title text-lg font-semibold">Company</h6>
           <a className="link link-hover block mt-2">About us</a>
@@ -64,16 +61,12 @@ export default function Footer() {
           <a className="link link-hover block">Jobs</a>
           <a className="link link-hover block">Press kit</a>
         </nav>
-
-        {/* Legal Section */}
         <nav>
           <h6 className="footer-title text-lg font-semibold">Legal</h6>
           <a className="link link-hover block mt-2">Terms of use</a>
           <a className="link link-hover block">Privacy policy</a>
           <a className="link link-hover block">Cookie policy</a>
         </nav>
-
-        {/* Newsletter Section */}
         <form>
           <h6 className="footer-title text-lg font-semibold">Newsletter</h6>
           <fieldset className="form-control w-full mt-4">
@@ -94,7 +87,6 @@ export default function Footer() {
         </form>
       </div>
 
-      {/* Footer Bottom Section */}
       <div className="text-center py-4 mt-10 border-t border-gray-300">
         <p>© 2024 Crowdfunding. All Rights Reserved.</p>
       </div>

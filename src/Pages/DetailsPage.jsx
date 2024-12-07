@@ -8,10 +8,12 @@ import Swal from 'sweetalert2';
 
 export default function DetailsPage() {
   const { user } = useContext(AuthContext);
+  console.log(user.email)
   const detailsData = useLoaderData();
+  console.log(detailsData)
   const { thumbnail, title, type, description, minDonation, deadline } = detailsData;
 
-  const isDeadlineOver = new Date(deadline) < new Date();
+  const isDeadlineOver = new Date(deadline) <= new Date();
   const handleDonate = () => {
     if (isDeadlineOver) {
       Swal.fire({
@@ -30,27 +32,27 @@ export default function DetailsPage() {
       minDonation,
       thumbnail,
     };
-
+console.log(donateData)
     fetch('https://server-site-topaz.vercel.app/user', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'content-type':'application/json',
       },
       body: JSON.stringify(donateData),
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         if (data.insertedId) {
           Swal.fire({
             title: 'Success!',
-            text: 'Campaign added successfully!',
+            text: 'Donate successfully!',
             icon: 'success',
             confirmButtonText: 'Done',
           });
         }
       });
   };
-
   return (
     <div className="flex flex-col bg-base-100 shadow-xl p-6 my-10 mx-auto max-w-4xl space-y-6">
       <div className="w-full">
@@ -66,14 +68,14 @@ export default function DetailsPage() {
           <BsCalendar2Date /> {deadline}
         </p>
         <p className="flex items-center gap-2 text-xl">
-          <MdOutlineAttachMoney className="text-2xl text-green-500" />
+          <MdOutlineAttachMoney className="text-2xl font-bold" />
           {minDonation} BDT
         </p>
       </div>
       <div className="flex justify-end">
         <button
           onClick={handleDonate}
-          className="btn bg-[#796B96] text-white hover:bg-[#5c4b77]"
+          className="btn bg-purple-600 text-white hover:bg-[#5c4b77]"
         >
           Donate NOW
         </button>

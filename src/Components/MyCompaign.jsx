@@ -14,11 +14,8 @@ export default function MyCampaign() {
     setComapaign(userCampaigns)
     setLoading(false)
   },[])
-
-
-// console.log(userCampaigns)
 const handleDelete = _id =>{
-  // console.log(_id)
+
   Swal.fire({
     title: "Are you sure?",
     text: "Campaign card is Deleted!",

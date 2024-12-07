@@ -1,19 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider'
+
+
 export default function MyDonation() {
   const {user} = useContext(AuthContext)
+  console.log(user?.email)
   const donationUser = useLoaderData()
-  const [userCampaigns, setUserCampaigns] = useState([]);
+  console.log(donationUser)
+  const [userCampaigns, setUserCampaigns] = useState(donationUser);
   const [loading, setLoading] = useState(true);
+
+
   useEffect(() => {
     setLoading(true);
     const filteredCampaigns = donationUser.filter(
-      (data) => data.email === user?.email
+      (data) => data.email == user?.email
     );
     setUserCampaigns(filteredCampaigns);
     setLoading(false); 
   }, [donationUser, user]);
+
+
+  
   return (
     <div>
       {loading ? (

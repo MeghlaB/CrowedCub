@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 export default function CompaignCard({campaign,onClick}) {
-  // console.log(campaign)
   const navigatate = useNavigate()
   const [comapign , setComapaign ] = useState(campaign)
     const {thumbnail,
@@ -15,7 +14,6 @@ export default function CompaignCard({campaign,onClick}) {
         _id
       }  = comapign
 const handleDelete = _id =>{
-  // console.log(_id)
   Swal.fire({
     title: "Are you sure?",
     text: "Campaign card is Deleted!",
