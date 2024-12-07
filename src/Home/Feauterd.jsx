@@ -8,13 +8,20 @@ import img6 from '../assets/impcat.png'
 import 'aos/dist/aos.css'; 
 import AOS from 'aos';
 import { Typewriter } from 'react-simple-typewriter'
+
+
+
 export default function Feauterd() {
+
+  
     useEffect(() => {
         AOS.init({
           duration: 1000,
           once: true,
         });
       }, []);
+
+
   return (
    <div>
     <section className="py-12">

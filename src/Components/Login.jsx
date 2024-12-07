@@ -80,14 +80,14 @@ export default function Login() {
                 type={showpassword ?'text':'password'}
                 placeholder="password"
                 name='password' className="input input-bordered" required />
-                <button
+                {/* <button
                   onClick={()=>setShowPassword(!showpassword)} 
                  className='absolute right-4 top-14'
                 >
                 {
                     showpassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
                 }
-                </button> 
+                </button>  */}
                 {
                 error&&<p className='text-red-500'>{error}</p>
                 } 
@@ -95,21 +95,9 @@ export default function Login() {
                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
             </div>
-        {/* <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password"  placeholder="password" name='password' className="input input-bordered" required />
-          <label  className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-           
-          </label>
-        </div> */}
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        
-      
       </form> 
       <p>Don't Have An Account ?<span><NavLink to={'/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
      

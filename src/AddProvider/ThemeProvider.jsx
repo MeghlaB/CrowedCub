@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { createContext } from 'react'
+
+
 export const ThemeContext = createContext()
 export default function ThemeProvider( {children}) {
+
     const [theme,setheme]=useState(
         localStorage.getItem("theme") || "light"
     )
@@ -16,6 +19,8 @@ export default function ThemeProvider( {children}) {
         theme,
         togglebtn
     }
+
+    
   return (
    <ThemeContext.Provider value={themeValue}
    >
