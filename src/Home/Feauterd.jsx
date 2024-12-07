@@ -8,6 +8,7 @@ import img6 from '../assets/impcat.png'
 import 'aos/dist/aos.css'; 
 import AOS from 'aos';
 import { Typewriter } from 'react-simple-typewriter'
+import Customization from '../Firebase/Customization'
 
 
 
@@ -37,6 +38,7 @@ export default function Feauterd() {
 
     </h2>
   </div>
+  <Customization>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
     <div className=" bg-white   p-6 rounded-lg shadow hover:shadow-lg transition"
 
@@ -54,7 +56,7 @@ export default function Feauterd() {
       <p className="text-gray-600 text-sm">Payment process and donors’ data is completely secure and encrypted.</p>
     </div>
     <div className="  bg-white  p-6 rounded-lg shadow hover:shadow-lg transition"
-     data-aos="zoom-out-up"  
+      
     >
       <img src={img3} alt="Regular Updates" className="w-12 h-12 mx-auto mb-4"/>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Regular Updates</h3>
@@ -68,7 +70,7 @@ export default function Feauterd() {
       <p className="text-gray-600 text-sm">We accept donations via all popular payment modes.</p>
     </div>
     <div className="  bg-white   p-6 rounded-lg shadow hover:shadow-lg transition"
-     data-aos="zoom-out-up"
+    
    
     >
       <img src={img5} alt="100% Verified Campaign" className="w-12 h-12 mx-auto mb-4"/>
@@ -84,6 +86,7 @@ export default function Feauterd() {
       <p className="text-gray-600 text-sm">Save one life at a time with every donation.</p>
     </div>
   </div>
+  </Customization>
 </section>
 
    </div>
