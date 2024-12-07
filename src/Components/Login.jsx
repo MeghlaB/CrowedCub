@@ -62,7 +62,7 @@ export default function Login() {
         })
        }
   return (
-    <div className='my-5 mx-3'>
+    <div className='my-5 mx-4'>
         <h1 className='text-5xl text-purple-500'>Login to your account</h1>
      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl px-4 py-3">
       <form onSubmit={handeleLogin}  className="card-body ">
