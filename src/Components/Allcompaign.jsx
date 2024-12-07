@@ -22,12 +22,12 @@ export default function Allcompaign() {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="table ">
             <thead>
               <tr>
                 <th></th>
                 <th>Title</th>
-                <th>Description</th>
+                <th>Type</th>
                 <th>Date</th>
                 <th>MinDonation</th>
               </tr>
@@ -37,7 +37,7 @@ export default function Allcompaign() {
                 <tr key={data._id}>
                   <th>{index + 1}</th>
                   <td>{data.title.slice(0, 30)}</td>
-                  <td>{data.description.slice(0, 50)}</td>
+                  <td>{data.type}</td>
                   <td>{data.deadline}</td>
                   <td>{data.minDonation}</td>
                   <td>

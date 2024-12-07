@@ -8,18 +8,19 @@ import img6 from '../assets/engolive.jpeg'
 import img7 from '../assets/quinety.jpeg'
 import imge8 from '../assets/57c59365-1a04-4dfb-807b-3985704b18b5.jpeg'
 import { Typewriter } from "react-simple-typewriter";
+import Customization from "../Firebase/Customization";
 
 
 export default function HowItWork() {
   const [activeTab, setActiveTab] = useState("donors");
   return (
-    <section className="py-12">
+    <section className="py-12  px-6 lg:px-0">
       <h2 className="text-3xl font-bold text-center mb-8">
       <Typewriter
     words={['How It Works?']}
     loop={0}
     cursor
-    cursorStyle={<span style={{ color: 'red', fontSize: '30px' }}>|</span>}
+    cursorStyle={<span style={{ color: 'purple', fontSize: '30px' }}>|</span>}
     typeSpeed={50}
     deleteSpeed={50}
     delaySpeed={1000}
@@ -49,7 +50,8 @@ export default function HowItWork() {
         </button>
       </div>
       {activeTab === "donors" && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+       <Customization>
+         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-orange-100 rounded-full">
               <img src={img1} alt="Choose a Cause" />
@@ -79,9 +81,11 @@ export default function HowItWork() {
             <p className="text-gray-700">Provide your valuable feedback.</p>
           </div>
         </div>
+       </Customization>
       )}
       {activeTab === "ngos" && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+       <Customization>
+         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <div className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition">
             <div className="flex justify-center items-center mb-6 w-16 h-16 bg-orange-100 rounded-full">
               <img src={img3} alt="Fill Form Icon" />
@@ -111,6 +115,7 @@ export default function HowItWork() {
             <p className="text-gray-700">Provide feedback about the campaign process.</p>
           </div>
         </div>
+       </Customization>
       )}
     </section>
   );
