@@ -15,7 +15,7 @@ export default function Allcompaign() {
   }, [loaderData,setLoading]) 
   setLoading(false)
   return (
-    <div className="container mx-auto my-5">
+    <div className="container mx-auto my-6">
       {loading ? (
         <div className="flex justify-center items-center h-40">
           <div className="spinner border-4 border-purple-600 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
