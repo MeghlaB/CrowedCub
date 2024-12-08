@@ -8,9 +8,9 @@ import Swal from 'sweetalert2';
 
 export default function DetailsPage() {
   const { user } = useContext(AuthContext);
-  console.log(user.email)
+  // console.log(user.email)
   const detailsData = useLoaderData();
-  console.log(detailsData)
+  // console.log(detailsData)
   const { thumbnail, title, type, description, minDonation, deadline } = detailsData;
 
   const isDeadlineOver = new Date(deadline) <= new Date();
@@ -32,7 +32,7 @@ export default function DetailsPage() {
       minDonation,
       thumbnail,
     };
-console.log(donateData)
+// console.log(donateData)
     fetch('https://server-site-topaz.vercel.app/user', {
       method: 'POST',
       headers: {
@@ -42,7 +42,7 @@ console.log(donateData)
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         if (data.insertedId) {
           Swal.fire({
             title: 'Success!',

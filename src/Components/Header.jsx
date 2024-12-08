@@ -15,7 +15,7 @@ export default function Header() {
   // const apidata = useContext(AuthContext)
  
   return (
-   <div className="navbar sticky top-0 font-bold text-gray-500 z-50" >
+   <div className="navbar sticky top-0 font-bold z-50" >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,7 +67,7 @@ export default function Header() {
       <button
           onClick={togglebtn}
           className={`px-4 py-2 text-sm font-bold transition duration-300 rounded-md shadow ${
-            theme === "light" ? "text-black hover:bg-gray-200" : "text-black font-bold hover:bg-gray-800 hover:text-white"
+            theme === "light" ? "text-black hover:bg-gray-200" : "text-white/75 font-bold hover:bg-gray-800 hover:text-white"
           }`}
         >
           {theme === "light"?<MdSunny />:<FiMoon />}

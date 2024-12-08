@@ -1,28 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
-import { AuthContext } from '../AddProvider/AuthProvider'
 
+import React, { useContext, useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../AddProvider/AuthProvider';
 
 export default function MyDonation() {
-  const {user} = useContext(AuthContext)
-  console.log(user?.email)
-  const donationUser = useLoaderData()
-  console.log(donationUser)
-  const [userCampaigns, setUserCampaigns] = useState(donationUser);
+  const { user } = useContext(AuthContext);
+  // const donationUser = useLoaderData();
+  const [userCampaigns, setUserCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
-    setLoading(true);
-    const filteredCampaigns = donationUser.filter(
-      (data) => data.email == user?.email
-    );
-    setUserCampaigns(filteredCampaigns);
-    setLoading(false); 
-  }, [donationUser, user]);
+    const fetchUserCampaigns = async () => {
+      if (user?.email) {
+        const response = await fetch(`https://server-site-topaz.vercel.app/user/${user.email}`);
+        const data = await response.json();
+        setUserCampaigns(data);
+      }
+      setLoading(false);
+    };
 
+    fetchUserCampaigns();
+  }, [user]);
 
-  
   return (
     <div>
       {loading ? (
@@ -30,7 +29,7 @@ export default function MyDonation() {
           <div className="spinner border-4 border-violet-500 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
         </div>
       ) : userCampaigns.length === 0 ? (
-        <p className="text-center flex justify-center items-center text-2xl font-bold text-violet-700 bg-base-200 h-80 my-7 mx-7">
+        <p className="text-center text-2xl font-bold text-violet-700 bg-base-200 h-80 flex items-center justify-center">
           No donations found!
         </p>
       ) : (
@@ -42,7 +41,7 @@ export default function MyDonation() {
             >
               <figure>
                 <img
-                  src={donation.thumbnail}
+                  src={donation.thumbnail || 'default-thumbnail.png'}
                   alt={donation.title}
                   className="h-40 w-full object-cover"
                 />
@@ -61,5 +60,5 @@ export default function MyDonation() {
         </div>
       )}
     </div>
-  )
+  );
 }

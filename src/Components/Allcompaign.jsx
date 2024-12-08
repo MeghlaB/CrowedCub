@@ -14,7 +14,7 @@ const handletoggolebtn = ()=>{
     setLoading(true)
     const sorted = [...loaderData].sort((a, b) => b.minDonation - a.minDonation)
     setSortdata(sorted)
-  setLoading(false)
+      setLoading(false)
 }
   
 
