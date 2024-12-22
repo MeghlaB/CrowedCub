@@ -1,5 +1,5 @@
 
-import banner1 from '../assets/banner1.jpg'
+import logo from '../assets/banner1.jpg'
 import banner2 from '../assets/banner2.jpg'
 import banner3 from '../assets/banner3.jpg'
 import banner4 from '../assets/banner4.jpg'
@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 export default function Banner() {
   const [currentSlider, setCurrentSlider] = useState(0);
   const carouselImages = [
-    { image: banner1, title: "Support Medical Expenses", description: "Your contribution can make a life-changing difference." },
+    { image:logo, title: "Support Medical Expenses", description: "Your contribution can make a life-changing difference." },
     { image: banner2, title: "Group of Friends Sharing a Light Moment Outdoors", description: "A cheerful group of four friends standing in a lush, green outdoor setting." },
     { image: banner3, title: "Support Business Initiatives", description: "Help raise funds to launch new products or services." },
     { image: banner4, title: "Support Creative Projects", description: "Provide financial assistance for creating small businesses, films, apps, and more." }
