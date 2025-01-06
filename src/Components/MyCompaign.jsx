@@ -12,7 +12,7 @@ export default function MyCampaign() {
   useEffect(() => {
     if (user?.email) {
       setLoading(true);
-      fetch(`https://server-site-topaz.vercel.app/addCompaign?email=${user.email}`)
+      fetch(`http://localhost:5000/addCompaign?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setCampaigns(data);
@@ -36,7 +36,7 @@ export default function MyCampaign() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`, {
+        fetch(`http://localhost:5000/addCompaign/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

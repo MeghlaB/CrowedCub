@@ -11,10 +11,11 @@ export default function RunnigComapign() {
     const { theme } = useContext(ThemeContext)
     useEffect(()=>{
         setLoading(true)
-        fetch('https://server-site-topaz.vercel.app/addCompaign')
+        fetch('http://localhost:5000/addCompaign')
         .then(res=>res.json())
         .then((data)=>{
             const today = new Date()
+            // console.log(data)
             const runningCampiangs = data.filter((campaign)=>new Date(campaign.deadline)> today)
             setCamapaign(runningCampiangs.slice(0,6))
             setLoading(false)

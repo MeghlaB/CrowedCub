@@ -5,6 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function AddCampaign() {
   const { user } = useContext(AuthContext);
+  console.log(user?.photoURL)
   const [formData, setFormData] = useState({
     thumbnail: "",
     title: "",
@@ -13,7 +14,7 @@ export default function AddCampaign() {
     minDonation: "",
     deadline: "",
     email:user?.email,
-    name:user?.displayName
+    name:user?.displayName,
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,9 +31,15 @@ export default function AddCampaign() {
    const description = from.description.value;
    const minDonation = from.minDonation.value;
    const deadline = from.deadline.value;
-   const addInfo ={thumbnail,title,type,description,minDonation,deadline,email:user?.email,name:user?.displayName}
-  fetch(`https://server-site-topaz.vercel.app/addCompaign`,{
+  
+   const addInfo ={thumbnail,title,type,description,minDonation,deadline,email:user?.email,name:user?.displayName,photo:user?.photoURL}
+  fetch(`http://localhost:5000/addCompaign`,{
     method:'POST',
+
+
+
+
+
     headers:{
       'content-type':'application/json'
     },

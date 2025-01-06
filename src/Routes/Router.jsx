@@ -17,7 +17,6 @@ import Update from '../Components/Update';
 import DetailsPage from '../Pages/DetailsPage';
 import Donate from '../Components/Donate';
 import ErrorPage from '../Pages/ErrorPage';
-import ScrollToTopOnMount from '../Components/ScrollComponent';
 import AboutPage from '../Pages/AboutPage';
 
 const router = createBrowserRouter([
@@ -32,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
            path:'/allCampaign',
-           loader:()=>fetch('https://server-site-topaz.vercel.app/addCompaign'),
+           loader:()=>fetch('http://localhost:5000/addCompaign'),
            element:<Allcompaign></Allcompaign>
         },
         {
@@ -42,10 +41,12 @@ const router = createBrowserRouter([
         {
            path:'/myCampaign',
            element:<PrivetRoute><MyCompaign></MyCompaign></PrivetRoute>,
+          //  loader:()=>fetch('http://localhost:5000/addCompaign')
         },
         {
            path:'/myDonation',
            element:<PrivetRoute><MyDonation></MyDonation></PrivetRoute>,
+         
         },
         {
           path:'/login',
@@ -57,20 +58,19 @@ const router = createBrowserRouter([
         {
           path:'/update/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/addCompaign/${params.id}`)
         },
         {
           path:'/details/:id',
-          element:<PrivetRoute>
-            <ScrollToTopOnMount>
-            <DetailsPage></DetailsPage>
-            </ScrollToTopOnMount>
-            </PrivetRoute>,
-          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
+          element:
+          
+            <DetailsPage></DetailsPage>,
+           
+          loader:({params})=>fetch(`http://localhost:5000/addCompaign/${params.id}`)
         },
         {
           path:'/donate',
-          element:<Donate></Donate>
+          element:<PrivetRoute><Donate></Donate></PrivetRoute>
         },
         {
           path:'/about',
