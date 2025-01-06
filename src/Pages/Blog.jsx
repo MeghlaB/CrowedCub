@@ -4,7 +4,7 @@ import { ThemeContext } from '../AddProvider/ThemeProvider';
 export default function Blog() {
   const { theme } = useContext(ThemeContext);
 
-  // Theme অনুযায়ী ক্লাস বের করার ফাংশন
+  
   const getTextClass = () => (theme === "dark" ? "text-gray-100" : "text-gray-900");
   const getSubTextClass = () => (theme === "dark" ? "text-white/75" : "text-gray-500");
   const getBgClass = () => (theme === "dark" ? "bg-gray-800 text-gray-100" : "bg-gray-100");

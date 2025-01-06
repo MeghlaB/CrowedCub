@@ -42,12 +42,10 @@ const router = createBrowserRouter([
         {
            path:'/myCampaign',
            element:<PrivetRoute><MyCompaign></MyCompaign></PrivetRoute>,
-          //  loader:()=>fetch('https://server-site-topaz.vercel.app/addCompaign')
         },
         {
            path:'/myDonation',
            element:<PrivetRoute><MyDonation></MyDonation></PrivetRoute>,
-          //  loader:()=>fetch('https://server-site-topaz.vercel.app/user')
         },
         {
           path:'/login',

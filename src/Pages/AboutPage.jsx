@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../AddProvider/ThemeProvider";
 
 export default function AboutPage() {
+    const { theme } = useContext(ThemeContext)
+    const getTextClass = () => (theme === "dark" ? "text-gray-100" : "text-gray-900");
+    const getSubTextClass = () => (theme === "dark" ? "text-white/75" : "text-gray-800");
+    const getBgClass = () => (theme === "dark" ? "bg-gray-800 text-gray-100" : "");
+
     const teamMembers = [
         {
             id: 1,
@@ -26,36 +32,35 @@ export default function AboutPage() {
     ];
 
     return (
-        <main className="bg-gray-50 text-gray-800 py-10 font-sans">
+        <main className={` ${theme === "dark" ? 'bg-[#1D232A] text-white' : 'bg-[#F2F2F2] text-black'} mt-12`}>
             {/* Header Section */}
             <section className="bg-gradient-to-rtext-white py-16 text-center">
-                <h1 className="text-5xl font-extrabold mb-4">About Crowdcube</h1>
-                <p className="text-xl max-w-2xl mx-auto">
+                <h1 className=" text-xl md:text-2xl  lg:text-5xl font-extrabold mb-4">About Crowdcube</h1>
+                <p className={`text-xl max-w-2xl mx-auto ${getSubTextClass()}`}>
                     Empowering Dreams Through Crowdfunding
                 </p>
             </section>
-
             {/* Mission and Vision Section */}
             <section className="container mx-auto px-6 py-12 grid gap-12 md:grid-cols-2">
                 <div>
-                    <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Mission</h2>
-                    <p className="text-lg">
+                    <h2 className="text-3xl font-bold text-secondary mb-4">Our Mission</h2>
+                    <p className={`text-xl max-w-2xl mx-auto ${getSubTextClass()}`}>
                         To provide a platform where anyone can bring their ideas to life through community support.
                     </p>
                 </div>
                 <div>
-                    <h2 className="text-3xl font-bold text-indigo-600 mb-4">Our Vision</h2>
-                    <p className="text-lg">
+                    <h2 className="text-3xl font-bold  text-secondary mb-4">Our Vision</h2>
+                    <p className={`text-xl max-w-2xl mx-auto ${getSubTextClass()}`}>
                         To build a world where opportunities are accessible to everyone, regardless of their background.
                     </p>
                 </div>
             </section>
 
             {/* How We Work Section */}
-            <section className="bg-gray-100 py-12">
+            <section className="py-12">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center mb-8 text-blue-600">How We Work</h2>
-                    <ul className="list-disc pl-10 space-y-4 text-lg">
+                    <h2 className="text-3xl font-bold text-center mb-8 text-secondary">How We Work</h2>
+                    <ul className={`list-disc pl-10 space-y-4 text-xl text-left max-w-2xl ${getSubTextClass()}`}>
                         <li>Campaign creation with clear goals and timelines.</li>
                         <li>Easy donation process for contributors.</li>
                         <li>Ensuring transparency and security for all users.</li>
@@ -63,24 +68,25 @@ export default function AboutPage() {
                 </div>
             </section>
 
+
             {/* Our Story Section */}
             <section className="container mx-auto px-6 py-12">
-                <h2 className="text-3xl font-bold text-blue-600 mb-4 text-center">Our Story</h2>
-                <p className="text-lg leading-relaxed text-center max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold  text-secondary mb-4 text-center">Our Story</h2>
+                <p className={`text-xl ${getSubTextClass()} text-lg leading-relaxed text-center max-w-4xl mx-auto`}>
                     Crowdcube started with a vision to empower dreamers. Over the years, we've helped countless
                     individuals turn their aspirations into reality, fostering innovation and community-driven success.
                 </p>
             </section>
 
             {/* Meet Our Team Section */}
-            <section className="bg-gray-50 py-12">
+            <section className="py-12">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center text-indigo-600 mb-8">Meet Our Team</h2>
+                    <h2 className="text-3xl font-bold text-center  text-secondary mb-8">Meet Our Team</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {teamMembers.map((member) => (
                             <div
                                 key={member.id}
-                                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
+                                className={`${theme === 'dark' ? 'bg-gray-700' : 'bg-white'}p-9 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border-primary border-2`}
                             >
                                 <img
                                     className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-600"
@@ -88,14 +94,14 @@ export default function AboutPage() {
                                     alt={member.alt}
                                 />
                                 <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
-                                <p className="text-sm text-gray-600">{member.position}</p>
+                                <p className="text-sm mb-3 text-gray-600">{member.position}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-         
+
         </main>
     );
 }
