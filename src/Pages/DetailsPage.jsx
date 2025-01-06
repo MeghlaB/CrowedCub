@@ -54,9 +54,9 @@ export default function DetailsPage() {
       });
   };
   return (
-    <div className="flex flex-col bg-base-100 shadow-xl p-6 my-10 mx-auto max-w-4xl space-y-6">
+    <div className="flex flex-col bg-base-100 shadow-xl p-6 my-24 mx-auto max-w-4xl space-y-6">
       <div className="w-full">
-        <img className="w-full rounded-lg" src={thumbnail} alt="Campaign" />
+        <img className="w-full h-[550px] rounded-lg" src={thumbnail} alt="Campaign" />
       </div>
       <div>
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
@@ -64,13 +64,23 @@ export default function DetailsPage() {
         <p>
           Type: <span className="badge badge-info">{type}</span>
         </p>
-        <p className="flex items-center gap-2 my-2 text-gray-500">
+        <p className="flex items-center gap-2 my-2 ">
           <BsCalendar2Date /> {deadline}
         </p>
         <p className="flex items-center gap-2 text-xl">
           <MdOutlineAttachMoney className="text-2xl font-bold" />
           {minDonation} BDT
         </p>
+      </div>
+      <div className='border-2 border-primary px-4 py-2 w-96 rounded-lg'>
+        <h1>Campaign By :</h1>
+        <div className='flex items-center gap-3'>
+        <img src={user?.photoURL} alt="user" className="rounded-full mt-3 w-16 h-16 border-4 border-secondary cursor-pointer" />
+        <div>
+        <p className='text-xl font-bold text-secondary'>{user?.displayName}</p>
+        <p className='text-xl font-bold text-secondary'>{user?.email}</p>
+        </div>
+        </div>
       </div>
       <div className="flex justify-end">
         <button

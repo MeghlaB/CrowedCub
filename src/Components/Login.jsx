@@ -4,9 +4,14 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import login from '../assets/Login-rafiki.svg'
+import { ThemeContext } from '../AddProvider/ThemeProvider';
+
 
 export default function Login() {
     const { loginuser ,setUser,user,UpdateProfile, GoogleLogin,setLoading}=useContext(AuthContext)
+    const{theme} = useContext(ThemeContext)
+
     const navigate = useNavigate()
     const [error , setError] = useState('')
     const [showpassword , setShowPassword] = useState(false)
@@ -62,55 +67,121 @@ export default function Login() {
         })
        }
   return (
-    <div className='my-5 mx-4'>
-        <h1 className='text-5xl text-purple-500'>Login to your account</h1>
-     <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl px-4 py-3">
-      <form onSubmit={handeleLogin}  className="card-body ">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email"  name='email' className="input input-bordered" required />
-        </div>
-        <div className="form-control relative">
-                <label className="label">
-                <span className="label-text">Password</span>
-                </label>
-                <input 
-                type={showpassword ?'text':'password'}
-                placeholder="password"
-                name='password' className="input input-bordered" required />
-                {/* <button
-                  onClick={()=>setShowPassword(!showpassword)} 
-                 className='absolute right-4 top-14'
-                >
-                {
-                    showpassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
-                }
-                </button>  */}
-                {
-                error&&<p className='text-red-500'>{error}</p>
-                } 
-                <label className="label">
-                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                </label>
-            </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
-        </div>
-      </form> 
-      <p>Don't Have An Account ?<span><NavLink to={'/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
-     
-    </div>
-    <div className="flex justify-center">
-  <div className="divider w-2/5 lg:w-1/5">or</div>
+<div className={theme === "dark"?"dark":""}>
+<div className="hero bg-gradient-to-r  min-h-screen flex items-center justify-center">
+  <div className="hero-content flex-col lg:flex-row-reverse items-center gap-10 w-full max-w-6xl">
+    {/* Image Section */}
+    <div
+  className={`text-center lg:text-left lg:w-1/2 p-8 rounded-lg transition-all duration-300 ${
+    theme === 'dark' ? 'bg-gray-800' : ''
+  }`}
+>
+  <h1
+    className={`text-3xl font-bold mb-6 text-center transition-colors ${
+      theme === 'dark' ? 'text-white' : 'text-gray-800'
+    }`}
+  >
+    Welcome Back!
+  </h1>
+  <img
+    src={login}
+    alt="Login Illustration"
+    className="w-3/4 mx-auto lg:mx-0 rounded-lg transform hover:scale-105 transition duration-300 ease-in-out"
+  />
 </div>
-    <div className='felx justify-center items-center my-4 max-w-sm mx-auto'>
-          <p>
-          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /> </Link>
-         </p>
-      
-     </div>
-   </div>
+
+    {/* Form Section */}
+ {/* Form Section */}
+<div className="min-h-screen flex items-center justify-centerdark:bg-gray-900">
+  <form
+    onSubmit={handeleLogin}
+    className={`max-w-sm p-8 mx-auto rounded-lg shadow-lg transition-all duration-300 ${
+      theme === 'dark' ? 'bg-gray-800 text-gray-100' : 'bg-white text-gray-800'
+    }`}
+  >
+    <h2 className="text-2xl font-bold text-center mb-6">
+      Login to Your Account
+    </h2>
+
+    {/* Email Input */}
+    <div className="form-control mb-4">
+      <label className="label">
+        <span className={`label-text ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+          Email
+        </span>
+      </label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        className={`input input-bordered w-full ${
+          theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'border-gray-300'
+        } focus:ring-2 focus:ring-purple-500`}
+        required
+      />
+    </div>
+
+    {/* Password Input */}
+    <div className="form-control mb-4">
+      <label className="label">
+        <span className={`label-text ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+          Password
+        </span>
+      </label>
+      <input
+      name='password'
+        type={showpassword ? 'text' : 'password'}
+        placeholder="Enter your password"
+        className={`input input-bordered w-full ${
+          theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'border-gray-300'
+        } focus:ring-2 focus:ring-purple-500`}
+        required
+      />
+      {error && <p className="text-red-500">{error}</p>}
+      <label className="label">
+        <a href="#" className="label-text-alt link link-hover text-purple-500">
+          Forgot password?
+        </a>
+      </label>
+    </div>
+
+    {/* Login Button */}
+    <div className="form-control mt-4">
+      <button className="btn btn-primary bg-purple-600 hover:bg-purple-700 text-white w-full transition-colors duration-300">
+        Login
+      </button>
+    </div>
+
+    {/* Google Login */}
+    <div className="text-center my-4">
+      <button
+        onClick={handleGoogle}
+        type="button"
+        className="btn border border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center justify-center w-full transition-colors duration-300"
+      >
+        <FcGoogle className="mr-2" /> Continue with Google
+      </button>
+    </div>
+
+    {/* Sign-up Redirect */}
+    <div className="text-center mt-6">
+      <p>
+        Don't have an account?{' '}
+        <NavLink to={'/register'} className="text-blue-700 underline">
+          Register
+        </NavLink>
+      </p>
+    </div>
+  </form>
+</div>
+
+
+  </div>
+
+</div>
+
+</div>
+
+
   )
 }

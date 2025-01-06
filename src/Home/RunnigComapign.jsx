@@ -40,11 +40,11 @@ export default function RunnigComapign() {
       ) : campaigns.length === 0 ? (
         <p className="text-center text-gray-500">No running campaigns</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {campaigns.map((campaign) => (
             <div
               key={campaign._id}
-              className="card bg-base-100 shadow-xl p-4 border"
+              className="card bg-base-100 shadow-xl p-4 border border-primary"
             >
               <figure>
                 <img
@@ -53,7 +53,7 @@ export default function RunnigComapign() {
                   className="h-40 w-full object-cover"
                 />
               </figure>
-              <div className="card-body">
+              <div className="card-body p-2">
                 <h2 className="card-title">{campaign.title}</h2>
                 <p className="text-sm text-gray-700">
                   {campaign.description.slice(0, 100)}...
@@ -74,6 +74,7 @@ export default function RunnigComapign() {
                 </div>
               </div>
             </div>
+            
           ))}
         </div>
       )}
