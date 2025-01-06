@@ -39,7 +39,7 @@ export default function Update() {
    const updateComapign ={thumbnail,title,type,description,minDonation,deadline,addedby:user?.email}
    
   //  send data with server site
-  fetch(`http://localhost:5000/addCompaign/${_id}`,{
+  fetch(`https://server-site-topaz.vercel.app/addCompaign/${_id}`,{
     method:'PUT',
     headers:{
       'content-type':'application/json'
@@ -162,7 +162,7 @@ export default function Update() {
           type="submit"
           className="bg-purple-600 w-full text-white px-6 py-2 rounded hover:bg-blue-600"
         >
-         Update
+         Update Campaign
         </button>
       </div>
     </form>

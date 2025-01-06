@@ -11,7 +11,7 @@ export default function RunnigComapign() {
     const { theme } = useContext(ThemeContext)
     useEffect(()=>{
         setLoading(true)
-        fetch('http://localhost:5000/addCompaign')
+        fetch('https://server-site-topaz.vercel.app/addCompaign')
         .then(res=>res.json())
         .then((data)=>{
             const today = new Date()
@@ -37,7 +37,7 @@ export default function RunnigComapign() {
     </h1>
   
     {loading ? (
-      <div className="flex justify-center items-center h-40">
+      <div className="flex justify-center items-center  h-40">
         <div className="spinner border-4 border-purple-600 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
       </div>
     ) : campaigns.length === 0 ? (
@@ -47,7 +47,7 @@ export default function RunnigComapign() {
         {campaigns.map((campaign) => (
           <div
             key={campaign._id}
-            className={`card bg-base-100 shadow-xl p-4 border ${theme === 'dark' ? 'border-gray-700' : 'border-primary'}`}
+            className={`card bg-     shadow-xl p-4 border ${theme === 'dark' ? 'border-gray-700' : 'border-primary'}`}
           >
             <figure>
               <img
@@ -57,10 +57,8 @@ export default function RunnigComapign() {
               />
             </figure>
             <div className="card-body p-2">
-              <h2 className="card-title">{campaign.title}</h2>
-              <p className="text-sm text-gray-700">
-                {campaign.description.slice(0, 100)}...
-              </p>
+              <h2 className="card-title">{campaign.title.slice(0,30)}....</h2>
+        
               <p className="font-bold mt-2">
                 Minimum Donation: {campaign.minDonation} BDT
               </p>

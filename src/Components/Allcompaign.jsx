@@ -49,9 +49,7 @@ const handletoggolebtn = ()=>{
                 </figure>
                 <div className="card-body p-2">
                   <h2 className="card-title">{campaign.title}</h2>
-                  <p className="text-sm text-gray-700">
-                    {campaign.description.slice(0, 100)}...
-                  </p>
+                  
                   <p className="font-bold mt-2">
                     Minimum Donation: {campaign.minDonation} BDT
                   </p>
@@ -71,24 +69,7 @@ const handletoggolebtn = ()=>{
               
             ))}
           </div>
-  // <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-  //   {sortData.map((data, index) => (
-  //     <div key={data._id} className="card bg-white shadow-lg p-6 rounded-lg overflow-hidden h-[350px] hover:scale-105 transition-transform duration-300">
-  //       <h3 className="font-bold text-lg mb-2">{data.title.slice(0, 30)}...</h3>
-  //       <p className="text-gray-600 mb-2">Type: {data.type}</p>
-  //       <p className="text-gray-500 mb-2">Deadline: {new Date(data.deadline).toLocaleDateString()}</p>
-  //       <p className="font-semibold text-gray-800 mb-4">Min Donation: {data.minDonation} BDT</p>
-  //       <div className="flex justify-end">
-  //         <Link
-  //           to={`/details/${data._id}`}
-  //           className="btn bg-purple-600 text-white"
-  //         >
-  //           See More
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   ))}
-  // </div>
+
 )}
 
     </div>

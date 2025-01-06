@@ -15,7 +15,7 @@ export default function Header() {
   // const apidata = useContext(AuthContext)
 
   return (
-    <div className={`navbar ${theme === "dark"?"bg-slate-800":'bg-primary'} font-bold text-white/75  bg-primary py-0 lg:py-4 px-3 lg:px-9 fixed top-0 left-0 w-full bg-opacity-70 backdrop-blur-2xl z-50 shadow-lg` }>
+    <div className={`navbar ${theme === "dark"?"bg-slate-800":'bg-white'} font-bold text-slate-900  py-0 lg:py-4 px-3 lg:px-9 fixed top-0 left-0 w-full bg-opacity-70 backdrop-blur-2xl z-50 shadow-lg` }>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,15 +35,15 @@ export default function Header() {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content  bg-primary rounded-box z-[4] mt-3 w-52 p-2  shadow">
-            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : "text-secondary"
+            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary " : "text-secondary"
             } to={'/'}>Home</NavLink>
-            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : "text-secondary"
+            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : "text-secondary"
             } to={'/allCampaign'}>All Campaign</NavLink>
-            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : "text-secondary"
+            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : "text-secondary"
             } to={'/addCampaign'}>Add New Campaign</NavLink>
-            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : "text-secondary"
+            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary " : "text-secondary"
             } to={'/myCampaign'}>My Campaign</NavLink>
-            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : "text-secondary"
+            <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : "text-secondary"
             } to={'/myDonation'}>My Donations</NavLink>
           </ul>
         </div>
@@ -51,21 +51,21 @@ export default function Header() {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4">
-          <NavLink className={({ isActive }) => isActive ? " text-secondary font-bold border-b-2 border-slate-900   " : ""
+          <NavLink className={({ isActive }) => isActive ? " text-secondary font-bold border-b-2 border-primary   " : ""
           } to={'/'}>Home</NavLink>
-          <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : ""
+          <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : ""
           } to={'/allCampaign'}>All Campaign</NavLink>
-          <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900 " : ""
+          <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary " : ""
           } to={'/about'}>About Us</NavLink>
 
           {
             user && (
               <>
-                <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900  " : ""
+                <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : ""
                 } to={'/addCampaign'}>Add New Campaign</NavLink>
-                <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900  " : ""
+                <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : ""
                 } to={'/myCampaign'}>My Campaign</NavLink>
-                <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-slate-900  " : ""
+                <NavLink className={({ isActive }) => isActive ? "text-secondary font-bold border-b-2 border-primary  " : ""
                 } to={'/myDonation'}>My Donations</NavLink>
               </>
             )

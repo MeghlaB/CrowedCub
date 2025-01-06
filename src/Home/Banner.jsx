@@ -146,7 +146,7 @@ export default function Banner() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       nextSlider();
-    }, 5000); // Change slides every 5 seconds
+    }, 5000); 
     return () => clearInterval(intervalId);
   }, [nextSlider]);
 
@@ -211,7 +211,7 @@ export default function Banner() {
             />
             {/* Overlay Content */}
             <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white p-6">
-              <h2 className="text-3xl md:text-5xl font-bold">{slide.title}</h2>
+              <h2 className="text-3xl md:text-5xl text-secondary font-bold">{slide.title}</h2>
               <p className="mt-4 text-lg md:text-2xl">{slide.description}</p>
             </div>
           </div>

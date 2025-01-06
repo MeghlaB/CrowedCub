@@ -15,8 +15,10 @@ export default function Footer() {
 
   <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
     {/* Website Logo */}
-    <div className="flex items-center mb-6 md:mb-0">
-      <img src={logo} alt="Website Logo" className="w-40" />
+    <div className="flex flex-col items-center mb-6 md:mb-0">
+      <img src={logo} alt="Website Logo" className="w-20 lg:w-40 mb-2" />
+      <p className={`text-lg font-semibold pt-6${theme === 'dark' ? 'text-white/75' : 'text-gray-900'}`}>CrowedCub Inc.</p>
+
     </div>
 
     {/* Navigation Links */}
@@ -24,16 +26,15 @@ export default function Footer() {
       <Link to="/" className="hover:text-purple-500">Home</Link>
       <Link to="/about" className="hover:text-purple-500">About Us</Link>
       <Link to="/allCampaign" className="hover:text-purple-500">Campaigns</Link>
-      <Link to="/contact" className="hover:text-purple-500">Contact</Link>
-      <Link to="/blog" className="hover:text-purple-500">Blog</Link>
+   
     </div>
 
     {/* Social Media Links */}
-    <div className={`flex space-x-6 mt-6 md:mt-0 ${theme === "dark"? "text-white/90":"text-gray-700"}`}>
-      <a href="https://www.facebook.com/groups/252388829152378" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-600">
+    <div className={`flex space-x-6 mt-6 md:mt-0 ${theme === "dark"? "text-white/90":"text-gray-900"}`}>
+      <a href="https://www.facebook.com/groups/252388829152378" target="_blank" rel="noopener noreferrer" className="text-black hover:text-blue-600">
         <i className="fab fa-facebook-f text-2xl"></i>
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-800">
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-black hover:text-blue-800">
         <i className="fab fa-linkedin-in text-2xl"></i>
       </a>
       {/* Add other social media icons if needed */}
