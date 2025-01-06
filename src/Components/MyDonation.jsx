@@ -41,7 +41,7 @@ export default function MyDonation() {
       {userCampaigns.map((donation) => (
         <div
           key={donation._id}
-          className="card bg-base-100 shadow-xl p-4 border flex flex-row items-center gap-4"
+          className="card bg-base-100 shadow-xl p-4 border flex flex-col lg:flex-row items-center gap-4"
         >
           <figure className="w-40 flex-shrink-0">
             <img
