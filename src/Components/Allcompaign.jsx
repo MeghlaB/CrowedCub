@@ -3,6 +3,8 @@ import { Link, useLoaderData } from 'react-router-dom'
 import CompaignCard from './CompaignCard'
 import { AuthContext } from '../AddProvider/AuthProvider'
 import { FiSliders } from "react-icons/fi";
+import { motion } from "framer-motion";
+
 export default function Allcompaign() {
   const loaderData = useLoaderData()
   const{setLoading,loading} = useContext(AuthContext)
@@ -36,9 +38,18 @@ const handletoggolebtn = ()=>{
 ) : (
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {sortData.map((campaign) => (
-              <div
+              <motion.div
                 key={campaign._id}
                 className="card bg-base-100 shadow-xl p-4 border border-primary"
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 5 }}
+                transition={
+                  {
+                    duration: 0.5,
+                    delay: sortData.indexOf(campaign) * 0.5
+  
+                  }
+                }
               >
                 <figure>
                   <img
@@ -65,7 +76,7 @@ const handletoggolebtn = ()=>{
                     </Link>
                   </div>
                 </div>
-              </div>
+              </motion.div>
               
             ))}
           </div>

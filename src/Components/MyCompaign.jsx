@@ -80,7 +80,7 @@ export default function MyCampaign() {
       </div>
 
       {loading ? (
-        <div className="flex justify-center items-center h-40">
+        <div className="flex justify-center items-center py-9 h-40">
           <div className="spinner-border border-4 border-violet-500 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
         </div>
       ) : view === "table" ? (
