@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../AddProvider/ThemeProvider';
+import { Typewriter } from 'react-simple-typewriter';
+import Customization from '../Firebase/Customization';
 
 export default function Blog() {
   const { theme } = useContext(ThemeContext);
@@ -13,7 +15,18 @@ export default function Blog() {
     <>
       <section className={`py-10`}>
         <div className="container mx-auto text-center">
-          <h2 className={`text-4xl font-extrabold mb-8 ${getTextClass()}`}>Explore Our Categories</h2>
+          <h2 className={`text-4xl font-extrabold mb-8 ${getTextClass()}`}>
+            <Typewriter
+                    words={['Explore Our Categories']}
+                    loop={Infinity}
+                    cursor
+                    cursorStyle='_'
+                    typeSpeed={50}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+            </h2>
+          <Customization>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {/* Education Category */}
             <div className={`category-card shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300 ${getBgClass()}`}>
@@ -59,6 +72,7 @@ export default function Blog() {
               <p className={`mt-2 ${getSubTextClass()}`}>Join us in protecting and advocating for animals in need.</p>
             </div>
           </div>
+          </Customization>
         </div>
       </section>
     </>

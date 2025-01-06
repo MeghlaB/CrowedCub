@@ -78,8 +78,8 @@ export default function AddCampaign() {
   };
 
   return (
-    <div className={`container mx-auto py-10 px-4 ${theme === 'dark' ? ' text-white' : 'bg-white text-gray-800'}`}>
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <div className={`container mx-auto  py-24 px-4 ${theme === 'dark' ? ' text-white' : 'bg-white text-gray-800'}`}>
+      <h2 className="md:text-xl lg:text-3xl font-bold text-center mb-8">
         <Typewriter
           words={['Add New Campaign']}
           loop={0}

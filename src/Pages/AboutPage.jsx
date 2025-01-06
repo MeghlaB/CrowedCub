@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../AddProvider/ThemeProvider";
+import Customization from "../Firebase/Customization";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function AboutPage() {
     const { theme } = useContext(ThemeContext)
@@ -32,11 +34,21 @@ export default function AboutPage() {
     ];
 
     return (
-        <main className={` ${theme === "dark" ? 'bg-[#1D232A] text-white' : 'bg-[#F2F2F2] text-black'} mt-12`}>
+        <main className={` ${theme === "dark" ? 'bg-[#1D232A] text-white' : 'bg-base-100 text-black'} mt-12`}>
             {/* Header Section */}
             <section className="bg-gradient-to-rtext-white py-16 text-center">
-                <h1 className=" text-xl md:text-2xl  lg:text-5xl font-extrabold mb-4">About Crowdcube</h1>
-                <p className={`text-xl max-w-2xl mx-auto ${getSubTextClass()}`}>
+                <h1 className=" text-xl md:text-2xl  text-secondary lg:text-5xl font-extrabold mb-4">
+                    <Typewriter
+                        words={['About Crowdcube']}
+                        loop={Infinity}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={50}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                    />
+                </h1>
+                <p className={`text-xl text-gray-600 max-w-2xl mx-auto ${getSubTextClass()}`}>
                     Empowering Dreams Through Crowdfunding
                 </p>
             </section>
@@ -79,27 +91,29 @@ export default function AboutPage() {
             </section>
 
             {/* Meet Our Team Section */}
-            <section className="py-12">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center  text-secondary mb-8">Meet Our Team</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                        {teamMembers.map((member) => (
-                            <div
-                                key={member.id}
-                                className={`${theme === 'dark' ? 'bg-gray-700' : 'bg-white'}p-9 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border-primary border-2`}
-                            >
-                                <img
-                                    className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-600"
-                                    src={member.image}
-                                    alt={member.alt}
-                                />
-                                <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
-                                <p className="text-sm mb-3 text-gray-600">{member.position}</p>
-                            </div>
-                        ))}
+            <Customization>
+                <section className="py-12">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-3xl font-bold text-center  text-secondary mb-8">Meet Our Team</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                            {teamMembers.map((member) => (
+                                <div
+                                    key={member.id}
+                                    className={`${theme === 'dark' ? 'bg-gray-700' : 'bg-white'}p-9 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center border-primary border-2`}
+                                >
+                                    <img
+                                        className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-600"
+                                        src={member.image}
+                                        alt={member.alt}
+                                    />
+                                    <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
+                                    <p className="text-sm mb-3 text-gray-600">{member.position}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </Customization>
 
 
         </main>

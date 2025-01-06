@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
-import logo from '../../src/assets/donate.png'
+import logoImage from '../../src/assets/donate.png'
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../AddProvider/ThemeProvider';
 
@@ -16,7 +16,7 @@ export default function Footer() {
   <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
     {/* Website Logo */}
     <div className="flex flex-col items-center mb-6 md:mb-0">
-      <img src={logo} alt="Website Logo" className="w-20 lg:w-40 mb-2" />
+      <img src={logoImage} alt="Website Logo" className="w-20 lg:w-40 mb-2  border-2 border-primary rounded-xl" />
       <p className={`text-lg font-semibold pt-6${theme === 'dark' ? 'text-white/75' : 'text-gray-900'}`}>CrowedCub Inc.</p>
 
     </div>

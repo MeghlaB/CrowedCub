@@ -55,6 +55,15 @@ export default function Update() {
         icon: 'success',
         confirmButtonText: 'Done'
       })
+      setFormData({
+        thumbnail: "",
+        title: "",
+        type: "personal issue",
+        description: "",
+        minDonation: "",
+        deadline: "",
+       
+      });
     }
  
   })
@@ -160,7 +169,7 @@ export default function Update() {
       <div className="text-center">
         <button
           type="submit"
-          className="bg-purple-600 w-full text-white px-6 py-2 rounded hover:bg-blue-600"
+          className="bg-secondary w-full text-white px-6 py-2 rounded hover:bg-primary"
         >
          Update Campaign
         </button>

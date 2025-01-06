@@ -72,7 +72,7 @@ export default function DetailsPage() {
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
         <p className="text-gray-600 mb-4">{description}</p>
         <p>
-          Type: <span className="badge badge-info">{type}</span>
+          Type: <span className="badge bg-primary py-2 text-slate-700">{type}</span>
         </p>
         <p className="flex items-center gap-2 my-2 ">
           <BsCalendar2Date /> {deadline}

@@ -48,7 +48,7 @@ const handletoggolebtn = ()=>{
                   />
                 </figure>
                 <div className="card-body p-2">
-                  <h2 className="card-title">{campaign.title}</h2>
+                  <h2 className="card-title">{campaign.title.slice(0,20)}...</h2>
                   
                   <p className="font-bold mt-2">
                     Minimum Donation: {campaign.minDonation} BDT
