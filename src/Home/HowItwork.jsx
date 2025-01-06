@@ -57,6 +57,7 @@ export default function HowItWork() {
       {activeTab === "donors" && (
         <Customization>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+             {/* card1*/}
             <div className={`text-center p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition ${getBgClass()}`}>
               <div className="flex justify-center items-center mb-6 w-16 h-16 bg-orange-100 rounded-full">
                 <img src={img1} alt="Choose a Cause" />
@@ -64,6 +65,7 @@ export default function HowItWork() {
               <h3 className="font-bold text-lg text-purple-600 mb-2">CHOOSE A CAUSE</h3>
               <p className={getSubTextClass()}>Browse different campaigns and select a cause.</p>
             </div>
+             {/* card2 */}
             <div className={`text-center p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition ${getBgClass()}`}>
               <div className="flex justify-center items-center mb-6 w-16 h-16 bg-purple-100 rounded-full">
                 <img src={img7} alt="Select Products" />
@@ -71,6 +73,7 @@ export default function HowItWork() {
               <h3 className="font-bold text-lg text-purple-600 mb-2">SELECT PRODUCTS</h3>
               <p className={getSubTextClass()}>Select products and quantity you wish to donate.</p>
             </div>
+             {/* card3 */}
             <div className={`text-center p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition ${getBgClass()}`}>
               <div className="flex justify-center items-center mb-6 w-16 h-16 bg-green-100 rounded-full">
                 <img src={img4} alt="Order Processing" />
@@ -78,6 +81,7 @@ export default function HowItWork() {
               <h3 className="font-bold text-lg text-purple-600 mb-2">ORDER PROCESSING</h3>
               <p className={getSubTextClass()}>Checkout and pay for your contributions.</p>
             </div>
+            {/* card4 */}
             <div className={`text-center p-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition ${getBgClass()}`}>
               <div className="flex justify-center items-center mb-6 w-16 h-16 bg-red-100 rounded-full">
                 <img src={img2} alt="Final Feedback" />
