@@ -107,7 +107,7 @@ export default function Header() {
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className={`menu menu-horizontal px-1 gap-4 `}>
+        <ul className={`menu menu-horizontal px-1 gap-4 ${theme === "dark"?'text-white/65':'text-black'}`}>
           <NavLink
             className={({ isActive }) =>
               isActive

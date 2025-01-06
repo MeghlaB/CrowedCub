@@ -8,9 +8,11 @@ import { BsCalendar2Date } from 'react-icons/bs';
 import { MdOutlineAttachMoney } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import ScrollToTopOnMount from '../Components/ScrollComponent';
+import { ThemeContext } from '../AddProvider/ThemeProvider';
 
 export default function DetailsPage() {
   const { user } = useContext(AuthContext);
+  const {theme}=useContext(ThemeContext)
   const navigate = useNavigate();
   const detailsData = useLoaderData();
   const { thumbnail, title, type, description, minDonation, deadline,email,photo,name } = detailsData;
@@ -70,7 +72,7 @@ export default function DetailsPage() {
       </div>
       <div>
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className={theme==="dark"?'text-white/75':'text-slate-900'}>{description}</p>
         <p>
           Type: <span className="badge bg-primary py-2 text-slate-700">{type}</span>
         </p>
