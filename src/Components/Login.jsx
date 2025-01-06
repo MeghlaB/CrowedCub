@@ -68,11 +68,11 @@ export default function Login() {
   }
   return (
     <div className={theme === "dark" ? "dark" : ""}>
-      <div className="hero bg-gradient-to-r  min-h-screen flex items-center justify-center">
+      <div className="hero bg-gradient-to-r  min-h-screen flex items-center justify-center py-10 lg:py-16">
         <div className="hero-content flex-col lg:flex-row-reverse items-center gap-10 w-full max-w-6xl">
           {/* Image Section */}
           <div
-            className={`text-center lg:text-left lg:w-1/2 p-8 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'bg-gray-800' : ''
+            className={`text-center lg:text-left mt-10 lg:w-1/2 p-8 rounded-lg transition-all duration-300 ${theme === 'dark' ? 'bg-gray-800' : ''
               }`}
           >
             <h1
@@ -150,11 +150,13 @@ export default function Login() {
                 <button
                   onClick={handleGoogle}
                   type="button"
-                  className="btn border border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center justify-center w-full transition-colors duration-300"
+                  className="btn border border-blue-950  lg:text-lg hover:bg-sky-950 hover:text-white flex flex-col lg:flex-row items-center justify-center w-full transition-colors duration-300"
                 >
-                  <FcGoogle className="mr-2" /> Continue with Google
+                  <FcGoogle className="mr-2 lg:mr-0 lg:mb-0 mb-2" />
+                   Google
                 </button>
               </div>
+
 
               {/* Sign-up Redirect */}
               <div className="text-center mt-6">
