@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
            path:'/allCampaign',
-           loader:()=>fetch('https://server-site-topaz.vercel.app/addCompaign'),
+           loader:()=>fetch('http://localhost:5000/addCompaign'),
            element:<Allcompaign></Allcompaign>
         },
         {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         {
            path:'/myCampaign',
            element:<PrivetRoute><MyCompaign></MyCompaign></PrivetRoute>,
-          //  loader:()=>fetch('https://server-site-topaz.vercel.app/addCompaign')
+          //  loader:()=>fetch('http://localhost:5000/addCompaign')
         },
         {
            path:'/myDonation',
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         {
           path:'/update/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/addCompaign/${params.id}`)
         },
         {
           path:'/details/:id',
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
           
             <DetailsPage></DetailsPage>,
            
-          loader:({params})=>fetch(`https://server-site-topaz.vercel.app/addCompaign/${params.id}`)
+          loader:({params})=>fetch(`http://localhost:5000/addCompaign/${params.id}`)
         },
         {
           path:'/donate',

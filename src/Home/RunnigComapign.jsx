@@ -46,18 +46,10 @@ export default function RunnigComapign() {
     ) : (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {campaigns.map((campaign) => (
-          <motion.div
+          <div
             key={campaign._id}
             className={`card bg-     shadow-xl p-4 border ${theme === 'dark' ? 'border-gray-700' : 'border-primary'}`}
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 5 }}
-            transition={
-              {
-                duration: 0.3,
-                delay: campaigns.indexOf(campaign) * 0.5
-
-              }
-            }
+           
           >
             <figure>
               <img
@@ -84,7 +76,7 @@ export default function RunnigComapign() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     )}

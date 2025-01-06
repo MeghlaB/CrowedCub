@@ -88,7 +88,7 @@ export default function Login() {
             />
           </div>
           {/* Form Section */}
-          <div className="min-h-screen flex items-center justify-centerdark:bg-gray-900">
+          <div className="min-h-screen flex items-center justify-center ">
             <form
               onSubmit={handeleLogin}
               className={`max-w-sm p-8 mx-auto rounded-lg shadow-lg transition-all duration-300 ${theme === 'dark' ? 'bg-gray-800 text-gray-100' : 'bg-white text-gray-800'

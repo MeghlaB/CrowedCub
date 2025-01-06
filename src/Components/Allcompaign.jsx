@@ -21,7 +21,7 @@ const handletoggolebtn = ()=>{
   
 
   return (
-    <div className="container mx-auto my-28">
+    <div className="container mx-auto py-28">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">All Campaigns</h2>
         <button
