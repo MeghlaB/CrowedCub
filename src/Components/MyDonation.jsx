@@ -27,7 +27,7 @@ export default function MyDonation() {
   }, [user]);
 
   return (
-    <div className="my-28">
+    <div className="py-28">
   {loading ? (
     <div className="flex justify-center items-center h-40">
       <div className="spinner border-4 border-violet-500 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
@@ -41,7 +41,7 @@ export default function MyDonation() {
       {userCampaigns.map((donation) => (
         <div
           key={donation._id}
-          className="card bg-base-100 shadow-xl p-4 px-2 md:px-4 lg:px-0 border flex flex-col lg:flex-row items-center gap-4"
+          className="card bg-base-100 shadow-xl p-4 px-2 md:px-4 lg:px-5 border flex flex-col lg:flex-row items-center gap-4"
         >
           <figure className="w-40 flex-shrink-0">
             <img
@@ -53,7 +53,7 @@ export default function MyDonation() {
           <div className="card-body flex-grow">
             <h2 className="card-title">{donation.title}</h2>
             <p>{donation.description}</p>
-            <p className="font-bold">
+            <p className="font-bold text-xs lg:text-[18px]">
               Minimum Donation: {donation.minDonation} BDT
             </p>
             <p>Donated By: {donation.username}</p>

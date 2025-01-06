@@ -61,7 +61,7 @@ export default function RunnigComapign() {
             <div className="card-body p-2">
               <h2 className="card-title">{campaign.title.slice(0,30)}....</h2>
         
-              <p className="font-bold mt-2">
+              <p className="font-bold text-xs lg:text[18px] mt-2">
                 Minimum Donation: {campaign.minDonation} BDT
               </p>
               <p className="text-sm text-gray-500">

@@ -63,7 +63,7 @@ export default function MyCampaign() {
   };
 
   return (
-    <div className="container mx-auto my-28">
+    <div className="container mx-auto py-28">
       <div className="mb-6 text-left">
         <button
           className={`btn ${view === "table" ? "bg-secondary text-white" : "btn-outline"} mx-2`}
@@ -102,17 +102,17 @@ export default function MyCampaign() {
                 <tr key={data._id}>
                   <th>{index + 1}</th>
                   <td>{data.title}</td>
-                  <td>{data.deadline}</td>
-                  <td>{data.minDonation}</td>
-                  <td>
+                  <td className="text-center">{data.deadline}</td>
+                  <td className="text-center">{data.minDonation}</td>
+                  <td className="text-center">
                     <Link to={`/update/${data._id}`} className="btn bg-secondary hover:bg-primary text-white border-none">
                       Update
                     </Link>
                   </td>
-                  <td>
+                  <td className="flex items-center justify-center">
                     <button
                       onClick={() => handleDelete(data._id)}
-                      className="btn bg-red-500 hover:bg-red-400 border-none text-white"
+                      className="btn bg-red-500 hover:bg-red-400 border-none text-white "
                     >
                       Delete
                     </button>

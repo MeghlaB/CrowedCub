@@ -1,6 +1,3 @@
-
-
-
 import React, { useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AddProvider/AuthProvider';
@@ -12,15 +9,14 @@ import { ThemeContext } from '../AddProvider/ThemeProvider';
 
 export default function DetailsPage() {
   const { user } = useContext(AuthContext);
-  const {theme}=useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const detailsData = useLoaderData();
-  const { thumbnail, title, type, description, minDonation, deadline,email,photo,name } = detailsData;
+  const { thumbnail, title, type, description, minDonation, deadline, email, photo, name } = detailsData;
 
   const isDeadlineOver = new Date(deadline) <= new Date();
   const handleDonate = () => {
     if (!user) {
-      // If user is not logged in, redirect to login page
       navigate('/login');
       return;
     }
@@ -60,7 +56,6 @@ export default function DetailsPage() {
             icon: 'success',
             confirmButtonText: 'Done',
           });
-      
         }
       });
   };
@@ -68,11 +63,11 @@ export default function DetailsPage() {
   return (
     <div className="flex flex-col bg-base-100 shadow-xl p-6 my-24 mx-auto max-w-4xl space-y-6">
       <div className="w-full">
-        <img className="w-full h-[550px] rounded-lg" src={thumbnail} alt="Campaign" />
+        <img className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] rounded-lg object-cover" src={thumbnail} alt="Campaign" />
       </div>
       <div>
-        <h2 className="text-3xl font-bold mb-4">{title}</h2>
-        <p className={theme==="dark"?'text-white/75':'text-slate-900'}>{description}</p>
+        <h2 className="text-xl lg:text-3xl font-bold mb-4">{title}</h2>
+        <p className={theme === "dark" ? 'text-white/75' : 'text-slate-900'}>{description}</p>
         <p>
           Type: <span className="badge bg-primary py-2 text-slate-700">{type}</span>
         </p>
@@ -84,8 +79,8 @@ export default function DetailsPage() {
           {minDonation} BDT
         </p>
       </div>
-      <div className="border-2 border-primary px-4 py-2 w-96 rounded-lg">
-        <h1>Campaign By :</h1>
+      <div className="border-2 border-primary px-4 py-2 w-full sm:w-96 rounded-lg">
+        <h1 className='text-xl font-bold'>Campaign By :</h1>
         <div className="flex items-center gap-3">
           <img
             src={photo}
@@ -93,8 +88,8 @@ export default function DetailsPage() {
             className="rounded-full mt-3 w-16 h-16 border-4 border-secondary cursor-pointer"
           />
           <div>
-            <p className="text-xl font-bold text-secondary">{name}</p>
-            <p className="text-xl font-bold text-secondary">{email}</p>
+            <p className="text-xs lg:text-xl font-bold text-secondary">{name}</p>
+            <p className="text-xs lg:text-xl font-bold text-secondary">{email}</p>
           </div>
         </div>
       </div>
