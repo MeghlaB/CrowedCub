@@ -62,13 +62,15 @@
 
   ---
 
-
+### Getting Statred
+---
 ### 1. Clone the repository:
-```bash
-git clone https://github.com/MeghlaB/CrowedCub
+```bash or terminal
+git clone https://github.com/MeghlaB/CrowedCub.git
+
 cd CrowedCub
 ```
-###2.Install dependencies:
+### 2.Install dependencies:
 
 npm install
 
