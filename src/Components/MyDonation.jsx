@@ -43,11 +43,11 @@ export default function MyDonation() {
           key={donation._id}
           className="card bg-base-100 shadow-xl p-4 px-2 md:px-4 lg:px-5 border flex flex-col lg:flex-row items-center gap-4"
         >
-          <figure className="w-40 flex-shrink-0">
+          <figure className="lg:w-40 md:w-full flex-shrink-0">
             <img
               src={donation.thumbnail || 'default-thumbnail.png'}
               alt={donation.title}
-              className="h-40 w-full object-cover"
+              className="lg:h-40 md:h-52 w-full  object-cover"
             />
           </figure>
           <div className="card-body flex-grow">
