@@ -2,9 +2,11 @@ import React, { useContext, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../AddProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { ThemeContext } from '../AddProvider/ThemeProvider';
 export default function Update() {
     const updateData = useLoaderData()
     const { user } = useContext(AuthContext);
+    const {theme}=useContext(ThemeContext)
     const {
         thumbnail,
         title,
@@ -154,18 +156,25 @@ export default function Update() {
           type="email"
           value={user?.email || ""}
           readOnly
-          className="w-full px-3 py-2 border rounded bg-gray-100"
+          className={`w-full px-3 py-2 border rounded-md ${
+            theme === "dark" ? "text-slate-900 bg-gray-300" : "text-gray-700"
+          }`}
         />
       </div>
       <div className="mb-4">
-        <label className="text-left flex justify-start text-gray-700 font-bold mb-2">User Name</label>
-        <input
-          type="text"
-          value={user?.displayName || ""}
-          readOnly
-          className="w-full px-3 py-2 border rounded bg-gray-100"
-        />
-      </div>
+  <label className="text-left flex justify-start text-gray-700 font-bold mb-2">
+    User Name
+  </label>
+  <input
+    type="text"
+    value={user?.displayName || ""}
+    readOnly
+    className={`w-full px-3 py-2 border rounded-md ${
+      theme === "dark" ? "text-slate-900 bg-gray-300" : "text-gray-700"
+    }`}
+  />
+</div>
+
       <div className="text-center">
         <button
           type="submit"
