@@ -64,6 +64,8 @@
 
 ### Getting Statred
 ---
+To run this project on your local machine, follow these steps:
+
 ### 1. Clone the repository:
 ```bash or terminal
 git clone https://github.com/MeghlaB/CrowedCub.git
