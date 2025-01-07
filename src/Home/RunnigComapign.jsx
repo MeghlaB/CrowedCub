@@ -70,7 +70,7 @@ export default function RunnigComapign() {
               <div className="card-actions justify-end mt-4">
                 <Link
                   to={`/details/${campaign._id}`}
-                  className={`btn ${theme === 'dark' ? 'bg-purple-600' : 'bg-purple-600 text-white'}`}
+                  className={`btn ${theme === 'dark' ? 'bg-purple-600 text-white' : 'bg-purple-600 text-white'}`}
                 >
                   See More
                 </Link>
