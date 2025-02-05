@@ -1,7 +1,9 @@
 #1.Projects Name: CrowedCub
+
 <p align="center">
   <img src="https://i.ibb.co.com/9m61P98P/Capture.png" alt="Project Preview" width="600" />
 </p>
+---
 
 #2.Live-Link=> https://assignment-10tulip.web.app/
 
